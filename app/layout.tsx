@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: React.ComponentProps<typeof NextThemesProvider>) {
+}: React.ComponentProps<typeof ThemeProvider>) {
   return (
     <html lang="en">
       <body
