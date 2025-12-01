@@ -8,13 +8,13 @@ export default function Header() {
           <Link className="" href="/">Home</Link>
         </li>
         <li>
-          <Link className="" href="/project">Projects</Link>
+          <Link className="" href="/Projects">Projects</Link>
         </li>
         <li>
-          <Link className="" href="/resume">Resume</Link>
+          <Link className="" href="/Resume">Resume</Link>
         </li>
         <li>
-          <Link className="" href="/contact">Contact</Link>
+          <Link className="" href="/Contact">Contact</Link>
         </li>
         {/* <li>
           <Link className="" href="/about">About</Link>
@@ -23,4 +23,3 @@ export default function Header() {
     </div>
   );
 }
-    
