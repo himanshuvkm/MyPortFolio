@@ -7,6 +7,7 @@ import ProjectHoverCard from "./hovercard";
 import fintrackimg from  "@/public/fintrack.png" ;
 import incblogimg  from"@/public/incblog.png";
 import  readmeaiimg  from "@/public/readmeai.png";
+import  chatimg  from "@/public/image.png";
 export default function Projects() {
   const projects = [
     {
@@ -65,7 +66,7 @@ export default function Projects() {
       title: "Real-Time Chat Application",
       link: "https://github.com/himanshuvkm/ChatApplication",
       demo: "https://chatapplication-8385.onrender.com",
-      image: "/",
+      image: chatimg,
       category: "Frontend + Backend | MERN",
       description:
         "A real-time chat app with Socket.IO, JWT auth, online/offline status, protected routes, and responsive UI. Supports instant messaging and user presence tracking.",

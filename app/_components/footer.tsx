@@ -1,4 +1,5 @@
 import { Mail, Github, Linkedin } from "lucide-react";
+import Link from "next/link";
 import { SiX } from "react-icons/si";
 
 export default function Footer() {
@@ -7,16 +8,16 @@ export default function Footer() {
       
       <ul className="flex gap-8  justify-center">
         <li>
-          <Mail size={22} className="" />
+          <Link href={"mailto:himanshuvkm252@gmail.com"}><Mail size={22} className="" /></Link>
         </li>
         <li>
-          <Github size={22} className="" />
+          <Link href={"https://github.com/himanshuvkm"}><Github size={22} className="" /></Link>
         </li>
         <li>
-          <SiX size={20} className="" />
+          <Link href={"https://x.com/Himanshu_10147"}><SiX size={20} className="" /></Link>
         </li>
         <li>
-          <Linkedin size={22} className="" />
+          <Link href={"https://www.linkedin.com/in/himanshu-vishwakarma-2275a5354"}><Linkedin size={22} className="" /></Link>
         </li>
       </ul>
     </div>

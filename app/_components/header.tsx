@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Header() {
   return (
     <div className="my-5">
-      <ul className="flex gap-4 font-medium">
+      <ul className="flex gap-4 font-medium ">
         <li>
           <Link className="" href="/">Home</Link>
         </li>

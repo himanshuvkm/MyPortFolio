@@ -1,31 +1,34 @@
 "use client";
 
-import { useEffect } from "react";
-import{ GitHubCalendar} from "react-github-calendar";
-
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
+import { GitHubCalendar } from "react-github-calendar";
 
 export default function Home() {
-  // ---- TYPING ANIMATION ----
+  const { theme, systemTheme } = useTheme();
+
+ 
+  const [resolvedTheme, setResolvedTheme] = useState<"light" | "dark">("light");
+
+
+  useEffect(() => {
+    const current = theme === "system" ? systemTheme : theme;
+    setResolvedTheme(current === "dark" ? "dark" : "light");
+  }, [theme, systemTheme]);
+
+ 
   useEffect(() => {
     const element = document.getElementById("typing");
     if (!element) return;
 
-    const words = [
-      "20, tech nerd.",
-      "20, web dev.",
-      "20, designer.",
-      "20, builder."
-    ];
-
+    const words = ["20, tech nerd.", "20, web dev.", "20, designer.", "20, builder."];
     let wordIndex = 0;
     let charIndex = 0;
     let deleting = false;
 
     function type() {
-      if (!element) return;
-      
       const currentWord = words[wordIndex];
-
+    if(!element)return;
       if (!deleting) {
         element.textContent = currentWord.substring(0, charIndex + 1);
         charIndex++;
@@ -53,23 +56,16 @@ export default function Home() {
 
   return (
     <div className="py-5 tracking-tight leading-relaxed">
-
-      {/* ---- HEADING ---- */}
       <h1 className="font-serif text-2xl tracking-tight">
         Sup, I'm Himanshu Vishwakarma 👋
       </h1>
 
-      {/* ---- TYPING TEXT ---- */}
       <p className="text-lg mb-6">
-        <span
-          id="typing"
-          className="border-r border-gray-500 pr-1"
-        ></span>
+        <span id="typing" className="border-r border-gray-500 pr-1"></span>
       </p>
 
       <hr className="mb-8" />
 
-      {/* ---- ABOUT ME ---- */}
       <h2 className="font-serif text-xl mb-4">About Me</h2>
 
       <p className="max-w-2xl mb-5">
@@ -93,28 +89,16 @@ export default function Home() {
         </span>.
       </p>
 
-      {/* ---- SKILLS ---- */}
+      {/* Skills */}
       <h2 className="font-sans text-xl mb-3">Skills</h2>
 
       <div className="flex flex-wrap gap-3 text-sm mb-6">
         {[
-          "React",
-          "Next.js",
-          "TypeScript",
-          "Tailwind CSS",
-          "shadcn/ui",
-          "Node.js",
-          "Prisma",
-          "Supabase",
-          "UI/UX Design",
-          "MongoDB",
-          "Figma",
-          "Framer Motion",
-        ].map((skill) => (
-          <span
-            key={skill}
-            className="px-3 py-1 border border-gray-700 rounded-full"
-          >
+          "React", "Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui",
+          "Node.js", "Prisma", "Supabase", "UI/UX Design",
+          "MongoDB", "Figma", "Framer Motion"
+        ].map(skill => (
+          <span key={skill} className="px-3 py-1 border border-gray-700 rounded-full">
             {skill}
           </span>
         ))}
@@ -122,7 +106,6 @@ export default function Home() {
 
       <hr className="my-6" />
 
-      {/* ---- GITHUB ---- */}
       <h1 className="font-serif text-2xl tracking-tight mb-6">
         GitHub Contributions
       </h1>
@@ -130,21 +113,19 @@ export default function Home() {
       <div className="overflow-x-auto pb-5">
         <GitHubCalendar
           username="himanshuvkm"
-          colorScheme="light"
+          colorScheme={resolvedTheme}   // ⭐ updates based on theme
         />
       </div>
-      
-         {/* ---- WHAT I'M WORKING ON ---- */}
+
       <h2 className="font-serif text-2xl mb-3 mt-10">What I'm Working On</h2>
 
-      <p className="max-w-2xl mb-10">
+       <p className="max-w-2xl mb-10">
         Currently building small tools, exploring UI animations, and rewriting older
         projects with cleaner code. I'm also experimenting with design systems, working
         on personal side-projects, and slowly getting deeper into Web3 development.
         Learning a little every day.
       </p>
-
-
     </div>
   );
 }
+
