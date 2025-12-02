@@ -84,9 +84,10 @@ export default function Home() {
         You’ll usually find me experimenting with side-projects, learning new frameworks,
         or polishing UI components at 2 AM.  
         If you want to reach out, email me at{" "}
-        <span className="underline cursor-pointer">
+        <a  href="mailto:himanshuvkm252@gmail.com"
+          className="text-lg underline  hover:opacity-80">
           himanshuvkm252@gmail.com
-        </span>.
+        </a>.
       </p>
 
       {/* Skills */}

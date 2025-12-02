@@ -1,4 +1,13 @@
-export default function Contact() {
+"use client";
+
+import { useActionState } from "react";
+import { sendMessage } from "@/lib/action";
+
+export default function ContactForm() {
+  const [state, formAction] = useActionState(sendMessage, {
+    success: false,
+    error: null,
+  });
   return (
     <div className="py-10 tracking-tight leading-relaxed max-w-xl">
 
@@ -27,20 +36,26 @@ export default function Contact() {
       <div>
         <p className="text-sm  mb-3">Send a message</p>
 
-        <form className="space-y-4">
+        <form className="space-y-4" action={formAction}>
           <input
+            name="name"
+            required
             type="text"
             placeholder="Your Name"
             className="w-full p-2 bg-transparent border border-gray-700 rounded-md"
           />
 
           <input
+            name="email"
+            required
             type="email"
             placeholder="Your Email"
             className="w-full p-2 bg-transparent border border-gray-700 rounded-md"
           />
 
           <textarea
+            name="message"
+            required
             placeholder="Your Message"
             rows={4}
             className="w-full p-2 bg-transparent border border-gray-700 rounded-md"
@@ -48,14 +63,14 @@ export default function Contact() {
 
           <button
             type="submit"
-            className="px-4 py-2 border border-gray-700 rounded-md hover:bg-gray-800 transition"
+            className="px-4 py-2 border border-gray-700 bg-background rounded-md hover:bg-muted-foreground transition"
           >
             Send Message
           </button>
         </form>
 
         <p className="text-xs  mt-3">
-          Note: This form is static. Integrate with email API (Resend, Formspree, EmailJS) to make it work.
+          This form sends your message straight to my inbox — I’ll get back to you soon!
         </p>
       </div>
     </div>
