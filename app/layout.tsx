@@ -10,7 +10,7 @@ const roboto = Geist({subsets:['latin']})
 
 export const metadata: Metadata = {
   title: "Himanshu's Portfolio",
-  description: "portfolio by Me",
+  description: "portfolio by Himanshu Vishwakarma",
 };
 
 export default function RootLayout({
