@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import {Geist } from 'next/font/google'
+import {Geist, } from 'next/font/google'
+import { Doto } from "next/font/google";
 import "./globals.css";
 import {  ThemeProvider } from "next-themes"
 import Header from "./_components/header";
@@ -7,6 +8,7 @@ import Footer from "./_components/footer";
 import  ModeToggle  from "./_components/mode";
 
 const roboto = Geist({subsets:['latin']})
+const doto = Doto({ subsets: ["latin"], weight: ["400","700"] });
 
 export const metadata: Metadata = {
   title: "Himanshu's Portfolio",
@@ -19,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={roboto.className}
+        className={roboto.className }
       >
         <ThemeProvider
             attribute="class"
@@ -28,8 +30,8 @@ export default function RootLayout({
             disableTransitionOnChange
           >
         <div className="flex justify-center px-5">
-        <div className="flex flex-col my-10 w-full max-w-2xl ">
-        <div className="flex justify-between"><Header/> <ModeToggle/></div>
+        <div className="flex flex-col my-10 w-full max-w-2xl   ">
+        <div className="flex justify-between "><Header/> <ModeToggle/></div>
         
         {children}
         <Footer/>

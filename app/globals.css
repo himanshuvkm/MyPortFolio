@@ -1,4 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
+@import "@fontsource/ibm-plex-mono/400.css";
+@import "@fontsource/ibm-plex-mono/500.css";
+@import "@fontsource/ibm-plex-mono/700.css";
+
+
+.font-ibm {
+  font-family: "Doto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  font-variation-settings:
+    "ROND" 0;
+}
 
 @custom-variant dark (&:is(.dark *));
 
@@ -42,6 +56,8 @@
 
 :root {
   --radius: 0.625rem;
+    --graytext : #364153;
+
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -77,6 +93,7 @@
 
 .dark {
   --background: oklch(0.145 0 0);
+  --graytext : #A8AFBB;
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);  
