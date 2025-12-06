@@ -27,7 +27,9 @@ function Home() {
   return (
     <>
       <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-10">
-        <div>
+        <div className="w-full">
+          <div className="flex flex-row justify-between w-full items-start gap-4">
+            <div className="min-w-0">
           <p className="text-gray-400 text-sm flex items-center gap-1">
             Hey it's me 👋
           </p>
@@ -45,8 +47,19 @@ function Home() {
               <span id="localTime">{format(currentTime, "hh:mm:ss a")}</span>
             </span>
           </p>
+         </div>
+            <div className="flex-shrink-0">
+          <Image
+            src={logo}
+            alt="Avatar"
+            className="  rounded-xl border border-gray-700 object-cover
+             w-24 h-20 md:w-31 md:h-32"
+          />
+        </div>
+        </div>
 
-          <p className="mt-6 max-w-xl leading-relaxed">
+
+          <p className="mt-6 max-w-lg leading-relaxed">
             Yup! I'm a{" "}
             <span className="font-semibold">Full Stack Developer.</span> I love
             building clean UIs, smooth interactions, and solving problems. I
@@ -69,8 +82,8 @@ function Home() {
           <div className="flex items-center gap-4 mt-6">
             {/* Email Button */}
             <Link href="mailto:himanshuvkm252@gmail.com" target="_blank">
-            <Button
-              className="
+              <Button
+                className="
       group relative flex items-center gap-3
       px-8 py-3
       rounded-lg
@@ -82,19 +95,19 @@ function Home() {
       hover:scale-105
       hover:bg-[color-mix(in oklch, var(--muted), black 10%)]
     "
-            >
-              <MailsIcon
-                className="
+              >
+                <MailsIcon
+                  className="
         w-5 h-5 
         transition-all 
         group-hover:-translate-x-0.5 
         group-hover:scale-110
       "
-              />
-              <span className="transition-all group-hover:translate-x-0.5">
-                Email
-              </span>
-            </Button>
+                />
+                <span className="transition-all group-hover:translate-x-0.5">
+                  Email
+                </span>
+              </Button>
             </Link>
 
             {/* LinkedIn Button */}
@@ -119,15 +132,7 @@ function Home() {
             </Link>
           </div>
         </div>
-
-        {/* RIGHT SIDE — Avatar */}
-        <div className="mt-8 md:mt-0">
-          <Image
-            src={logo}
-            alt="Avatar"
-            className="w-32 h-32 rounded-xl border border-gray-700 object-cover"
-          />
-        </div>
+       
       </div>
       <div className="mb-10">
         <span className="px-3 py-1 text-xs bg-gray-800 border border-gray-700 rounded-md font-mono text-gray-300">
