@@ -11,6 +11,7 @@ import { FaRegClock } from "react-icons/fa";
 import { Mail, MailsIcon } from "lucide-react";
 import { GitHubCalendar } from "react-github-calendar";
 import Skills from "./_components/skill";
+import Link from "next/link";
 
 function Home() {
   const { resolvedTheme } = useTheme();
@@ -67,6 +68,7 @@ function Home() {
 
           <div className="flex items-center gap-4 mt-6">
             {/* Email Button */}
+            <Link href="mailto:himanshuvkm252@gmail.com" target="_blank">
             <Button
               className="
       group relative flex items-center gap-3
@@ -93,28 +95,28 @@ function Home() {
                 Email
               </span>
             </Button>
+            </Link>
 
             {/* LinkedIn Button */}
-            <Button
-              className="
+            <Link href="https://www.linkedin.com/in/himanshu-vishwakarma-2275a5354" target="_blank">
+              <Button
+                className="
       group relative flex items-center gap-3
-      px-8 py-3
-      rounded-lg
+      px-8 py-3 rounded-lg
       bg-[var(--muted)]
       text-[var(--foreground)]
       border border-[var(--border)]
-      transition-all
-      active:scale-95
+      transition-all active:scale-95
       hover:scale-105
       hover:bg-[color-mix(in oklch, var(--muted), black 10%)]
     "
-            >
-              <IoLogoLinkedin className="w-5 h-5 transition-all group-hover:scale-110" />
-
-              <span className="transition-all group-hover:translate-x-0.5">
-                LinkedIn
-              </span>
-            </Button>
+              >
+                <IoLogoLinkedin className="w-5 h-5 transition-all group-hover:scale-110" />
+                <span className="transition-all group-hover:translate-x-0.5">
+                  LinkedIn
+                </span>
+              </Button>
+            </Link>
           </div>
         </div>
 
