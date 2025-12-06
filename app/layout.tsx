@@ -6,6 +6,8 @@ import {  ThemeProvider } from "next-themes"
 import Header from "./_components/header";
 import Footer from "./_components/footer";
 import  ModeToggle  from "./_components/mode";
+import Lenis from "@studio-freight/lenis";
+import SmoothScroll from "./_components/SmoothScroll";
 
 const roboto = Geist({subsets:['latin']})
 const doto = Doto({ subsets: ["latin"], weight: ["400","700"] });
@@ -18,11 +20,14 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: React.ComponentProps<typeof ThemeProvider>) {
+  
   return (
     <html lang="en">
       <body
+
         className={roboto.className }
       >
+        <SmoothScroll />
         <ThemeProvider
             attribute="class"
             defaultTheme="system"

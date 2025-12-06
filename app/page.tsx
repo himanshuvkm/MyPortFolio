@@ -1,244 +1,155 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
+import React, { useState, useEffect } from "react";
+import { format } from "date-fns";
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import logo from "@/public/logome.png";
+import Image from "next/image";
+import { IoLocationOutline, IoLogoLinkedin } from "react-icons/io5";
+import { FaRegClock } from "react-icons/fa";
+import { Mail, MailsIcon } from "lucide-react";
 import { GitHubCalendar } from "react-github-calendar";
-import { VscVscode } from "react-icons/vsc";
-import {
-  SiJavascript,
-  SiTypescript,
-  SiC,
-  SiCplusplus,
-  SiHtml5,
-  SiCss3,
-  SiReact,
-  SiNextdotjs,
-  SiExpress,
-  SiTailwindcss,
-  SiReactquery,
-  SiFramer,
-  SiGreensock,
-  SiNodedotjs,
-  SiMongodb,
-  SiGit,
-  SiGithub,
-  SiVercel,
-  SiPostman,
-  SiSupabase,
-  SiPrisma,
-  SiPostgresql,
-} from "react-icons/si";
+import Skills from "./_components/skill";
 
-type Skill = {
-  name: string;
-  icon: React.ReactNode;
-};
-
-type CategoryProps = {
-  title: string;
-  skills: Skill[];
-};
-
-const SkillCategory: React.FC<CategoryProps> = ({ title, skills }) => (
-  <div className="mb-10">
-    <h3 className="text-graytext text-sm mb-2 font-mono tracking-wide">
-      &lt; {title} /&gt;
-    </h3>
-
-    <div className="flex flex-wrap gap-3">
-      {skills.map((skill) => (
-        <span
-          key={skill.name}
-          className="px-4 py-2 rounded-lg bg-background border border-gray-800 
-          text-xs flex items-center gap-2 hover:border-gray-600 transition"
-        >
-          {skill.icon}
-          {skill.name}
-        </span>
-      ))}
-    </div>
-  </div>
-);
-
-export default function Home() {
-  const { theme, systemTheme } = useTheme();
-  const [resolvedTheme, setResolvedTheme] = useState<"light" | "dark">("light");
+function Home() {
+  const { resolvedTheme } = useTheme();
+  const [currentTime, setCurrentTime] = useState(new Date());
 
   useEffect(() => {
-    const current = theme === "system" ? systemTheme : theme;
-    setResolvedTheme(current === "dark" ? "dark" : "light");
-  }, [theme, systemTheme]);
-
-  // Typing Animation
-  useEffect(() => {
-    const element = document.getElementById("typing");
-    if (!element) return;
-
-    const words = [
-      "20, tech nerd.",
-      "20, web dev.",
-      "20, designer.",
-      "20, builder.",
-    ];
-    let wordIndex = 0;
-    let charIndex = 0;
-    let deleting = false;
-
-    const type = () => {
-      const currentWord = words[wordIndex];
-      if (!element) return;
-
-      if (!deleting) {
-        element.textContent = currentWord.substring(0, charIndex + 1);
-        charIndex++;
-
-        if (charIndex === currentWord.length) {
-          deleting = true;
-          setTimeout(type, 1200);
-          return;
-        }
-      } else {
-        element.textContent = currentWord.substring(0, charIndex - 1);
-        charIndex--;
-
-        if (charIndex === 0) {
-          deleting = false;
-          wordIndex = (wordIndex + 1) % words.length;
-        }
-      }
-
-      setTimeout(type, deleting ? 60 : 120);
-    };
-
-    type();
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+    return () => clearInterval(timer);
   }, []);
 
   return (
-    <div className="py-5 tracking-tight leading-relaxed">
-      {/* Header */}
-      <h1 className="font-serif text-2xl tracking-tight">
-        Sup, I'm Himanshu Vishwakarma 👋
-      </h1>
-
-      <p className="text-lg mb-6">
-        <span id="typing" className="border-r border-gray-500 pr-1"></span>
-      </p>
-
-      <hr className="mb-8" />
-
-      {/* About */}
-      <h2 className="font-serif text-xl mb-4">About Me</h2>
-
-      <p className="max-w-2xl mb-5">
-        I'm a web developer who loves clean UI, smooth interactions, and
-        building things that feel effortless to use.
-      </p>
-
-      <p className="max-w-2xl mb-5">
-        Currently improving my design-engineering skills and crafting minimal,
-        thoughtful web experiences using Next.js, Tailwind CSS, and shadcn/ui.
-      </p>
-
-      <p className="max-w-2xl mb-8">
-        Contact me at{" "}
-        <a
-          href="mailto:himanshuvkm252@gmail.com"
-          className="text-lg underline hover:opacity-80"
-        >
-          himanshuvkm252@gmail.com
-        </a>
-        .
-      </p>
-
-      <section className="mt-10">
-        {/* Heading exactly like screenshot */}
-        <h2 className={`text-4xl mb-2  `}>
-          Skills{" "}
-          <span className="text-gray-500 text-sm tracking-normal font-sans">
-            Which I use/know
+    <>
+      <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-10">
+        <div>
+          <p className="text-gray-400 text-sm flex items-center gap-1">
+            Hey it's me 👋
+          </p>
+          <h1 className="text-4xl font-semibold mt-1">Himanshu Vishwakarma</h1>
+          <span className="inline-block bg-green-600/20 text-green-400 text-xs px-3 py-1 rounded-full mt-2">
+            ● Open to Work
           </span>
-        </h2>
 
-        <p className="text-gray-400 mb-8 max-w-xl">
-          These are the technologies I've learned and worked with. This list is
-          constantly evolving as I grow as a developer.
-        </p>
+          <p className="text-sm text-gray-400 mt-3 flex items-center gap-3">
+            <span className="flex items-center gap-1">
+              <IoLocationOutline /> <span id="localTime">Delhi, India</span>
+            </span>
+            <span className="flex items-center gap-1">
+              <FaRegClock />{" "}
+              <span id="localTime">{format(currentTime, "hh:mm:ss a")}</span>
+            </span>
+          </p>
 
-        {/* LANGUAGES */}
-        <SkillCategory
-          title="LANGUAGES"
-          skills={[
-            { name: "JavaScript", icon: <SiJavascript color="#F7DF1E" /> },
-            { name: "TypeScript", icon: <SiTypescript color="#3178C6" /> },
-            { name: "C", icon: <SiC color="#283593" /> },
-            { name: "C++", icon: <SiCplusplus color="#00599C" /> },
-            { name: "HTML", icon: <SiHtml5 color="#E44D26" /> },
-            { name: "CSS", icon: <SiCss3 color="#264DE4" /> },
-          ]}
-        />
+          <p className="mt-6 max-w-xl leading-relaxed">
+            Yup! I'm a{" "}
+            <span className="font-semibold">Full Stack Developer.</span> I love
+            building clean UIs, smooth interactions, and solving problems. I
+            enjoy crafting websites with
+            <span className="font-semibold"> React</span>,
+            <span className="font-semibold"> TypeScript</span>,
+            <span className="font-semibold"> Express</span>, and backend systems
+            using
+            <span className="font-semibold"> MongoDB</span> &{" "}
+            <span className="font-semibold">PostgreSQL</span>.
+          </p>
 
-        {/* FRAMEWORKS */}
-        <SkillCategory
-          title="FRAMEWORKS / LIBRARIES"
-          skills={[
-            { name: "React", icon: <SiReact color="#61DBFB" /> },
-            { name: "Next.js", icon: <SiNextdotjs /> },
-            { name: "Express.js", icon: <SiExpress /> },
-            { name: "TailwindCSS", icon: <SiTailwindcss color="#38BDF8" /> },
-            { name: "Framer Motion", icon: <SiFramer color="#0055FF" /> },
-          ]}
-        />
+          <p className="mt-4 max-w-xl leading-relaxed">
+            I love both{" "}
+            <span className="font-semibold">development & design.</span>
+            That means I enjoy creating interfaces that look clean and feel
+            effortless. Always learning, building, and improving.
+          </p>
 
-        {/* BACKEND */}
-        <SkillCategory
-          title="BACKEND & RUNTIME"
-          skills={[
-            { name: "Node.js", icon: <SiNodedotjs color="#3C873A" /> },
-            { name: "REST APIs", icon: <SiExpress /> },
-            { name: "Server Actions", icon: <SiNextdotjs /> },
-          ]}
-        />
+          <div className="flex items-center gap-4 mt-6">
+            {/* Email Button */}
+            <Button
+              className="
+      group relative flex items-center gap-3
+      px-8 py-3
+      rounded-lg
+      bg-[var(--muted)]
+      text-[var(--foreground)]
+      border border-[var(--border)]
+      transition-all
+      active:scale-95
+      hover:scale-105
+      hover:bg-[color-mix(in oklch, var(--muted), black 10%)]
+    "
+            >
+              <MailsIcon
+                className="
+        w-5 h-5 
+        transition-all 
+        group-hover:-translate-x-0.5 
+        group-hover:scale-110
+      "
+              />
+              <span className="transition-all group-hover:translate-x-0.5">
+                Email
+              </span>
+            </Button>
 
-        {/* DATABASE */}
-        <SkillCategory
-          title="DATABASE"
-          skills={[
-            { name: "MongoDB", icon: <SiMongodb color="#4DB33D" /> },
-            { name: "PostgreSQL", icon: <SiPostgresql color="#4169E1" /> },
-            { name: "Supabase DB", icon: <SiSupabase color="#3ECF8E" /> },
-            { name: "Prisma ORM", icon: <SiPrisma color="#2D3748" /> },
-          ]}
-        />
+            {/* LinkedIn Button */}
+            <Button
+              className="
+      group relative flex items-center gap-3
+      px-8 py-3
+      rounded-lg
+      bg-[var(--muted)]
+      text-[var(--foreground)]
+      border border-[var(--border)]
+      transition-all
+      active:scale-95
+      hover:scale-105
+      hover:bg-[color-mix(in oklch, var(--muted), black 10%)]
+    "
+            >
+              <IoLogoLinkedin className="w-5 h-5 transition-all group-hover:scale-110" />
 
-        {/* DEVTOOLS */}
-        <SkillCategory
-          title="DEVELOPER TOOLS"
-          skills={[
-            { name: "Git", icon: <SiGit color="#F05032" /> },
-            { name: "GitHub", icon: <SiGithub /> },
-            { name: "VS Code", icon: <VscVscode color="#0078d7" /> },
-            { name: "Vercel", icon: <SiVercel /> },
-            { name: "Postman", icon: <SiPostman color="#F3702A" /> },
-          ]}
-        />
-      </section>
+              <span className="transition-all group-hover:translate-x-0.5">
+                LinkedIn
+              </span>
+            </Button>
+          </div>
+        </div>
 
-      {/* GitHub Calendar */}
-      <h1 className="font-serif text-2xl tracking-tight mb-6 mt-10">
-        GitHub Contributions
-      </h1>
-
-      <div className="overflow-x-auto pb-5">
-        <GitHubCalendar username="himanshuvkm" colorScheme={resolvedTheme} />
+        {/* RIGHT SIDE — Avatar */}
+        <div className="mt-8 md:mt-0">
+          <Image
+            src={logo}
+            alt="Avatar"
+            className="w-32 h-32 rounded-xl border border-gray-700 object-cover"
+          />
+        </div>
       </div>
+      <div className="mb-10">
+        <span className="px-3 py-1 text-xs bg-gray-800 border border-gray-700 rounded-md font-mono text-gray-300">
+          Skills & Expertise
+        </span>
 
-      {/* Working On */}
-      <h2 className="font-serif text-2xl mb-3 mt-10">What I'm Working On</h2>
-
-      <p className="max-w-2xl mb-10">
-        Building small tools, exploring UI animations, and rewriting older
-        projects with cleaner code. Learning a little every day.
-      </p>
-    </div>
+        <h2 className="text-xl font-semibold mt-3">
+          Things I’ve Learnt <span className="text-gray-500">& I Know</span>
+        </h2>
+      </div>
+      <Skills />
+      <h1 className="font-serif text-2xl tracking-tight mb-6 mt-10">
+        {" "}
+        GitHub Contributions{" "}
+      </h1>{" "}
+      <div className="overflow-x-auto pb-5">
+        {" "}
+        <GitHubCalendar
+          username="himanshuvkm"
+          colorScheme={resolvedTheme === "dark" ? "dark" : "light"}
+        />{" "}
+      </div>
+    </>
   );
 }
+
+export default Home;
