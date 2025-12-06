@@ -1,16 +1,16 @@
 "use client";
 
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
-export interface Project {
-  image: string;
+export type Project = {
+  image: string | StaticImageData;
   title: string;
   demo: string;
   link: string;
   description: string;
   tech: string[];
-}
+};
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
