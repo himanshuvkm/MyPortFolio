@@ -12,6 +12,7 @@ import { Mail, MailsIcon } from "lucide-react";
 import { GitHubCalendar } from "react-github-calendar";
 import Skills from "./_components/skill";
 import Link from "next/link";
+import TextType from "@/components/TextType";
 
 function Home() {
   const { resolvedTheme } = useTheme();
@@ -30,34 +31,43 @@ function Home() {
         <div className="w-full">
           <div className="flex flex-row justify-between w-full items-start gap-4">
             <div className="min-w-0">
-          <p className="text-gray-400 text-sm flex items-center gap-1">
-            Hey it's me 👋
-          </p>
-          <h1 className="text-4xl font-semibold mt-1">Himanshu Vishwakarma</h1>
-          <span className="inline-block bg-green-600/20 text-green-400 text-xs px-3 py-1 rounded-full mt-2">
-            ● Open to Work
-          </span>
+              <p className="text-gray-400 text-sm flex items-center gap-1">
+                Hey it's me 👋
+              </p>
+              <h1 className="text-4xl font-semibold mt-1">
+                <TextType
+                  text={["Himanshu Vishwakarma"]}
+                  typingSpeed={80}
+                  pauseDuration={1000}
+                  showCursor={false}
+                  cursorCharacter="|"
+                />
+              </h1>
+              <span className="inline-block bg-green-600/20 text-green-400 text-xs px-3 py-1 rounded-full mt-2">
+                ● Open to Work
+              </span>
 
-          <p className="text-sm text-gray-400 mt-3 flex items-center gap-3">
-            <span className="flex items-center gap-1">
-              <IoLocationOutline /> <span id="localTime">Delhi, India</span>
-            </span>
-            <span className="flex items-center gap-1">
-              <FaRegClock />{" "}
-              <span id="localTime">{format(currentTime, "hh:mm:ss a")}</span>
-            </span>
-          </p>
-         </div>
+              <p className="text-sm text-gray-400 mt-3 flex items-center gap-3">
+                <span className="flex items-center gap-1">
+                  <IoLocationOutline /> <span id="localTime">Delhi, India</span>
+                </span>
+                <span className="flex items-center gap-1">
+                  <FaRegClock />{" "}
+                  <span id="localTime">
+                    {format(currentTime, "hh:mm:ss a")}
+                  </span>
+                </span>
+              </p>
+            </div>
             <div className="flex-shrink-0">
-          <Image
-            src={logo}
-            alt="Avatar"
-            className="  rounded-xl border border-gray-700 object-cover
+              <Image
+                src={logo}
+                alt="Avatar"
+                className="  rounded-xl border border-gray-700 object-cover
              w-24 h-20 md:w-31 md:h-32"
-          />
-        </div>
-        </div>
-
+              />
+            </div>
+          </div>
 
           <p className="mt-6 max-w-lg leading-relaxed">
             Yup! I'm a{" "}
@@ -111,7 +121,10 @@ function Home() {
             </Link>
 
             {/* LinkedIn Button */}
-            <Link href="https://www.linkedin.com/in/himanshu-vishwakarma-2275a5354" target="_blank">
+            <Link
+              href="https://www.linkedin.com/in/himanshu-vishwakarma-2275a5354"
+              target="_blank"
+            >
               <Button
                 className="
       group relative flex items-center gap-3
@@ -132,7 +145,6 @@ function Home() {
             </Link>
           </div>
         </div>
-       
       </div>
       <div className="mb-10">
         <span className="px-3 py-1 text-xs bg-gray-800 border border-gray-700 rounded-md font-mono text-gray-300">

@@ -23,11 +23,13 @@ import {
   SiPrisma,
   SiPostgresql,
 } from "react-icons/si";
+import Magnet from "@/components/Magnet";
 
 type Skill = { name: string; icon: React.ReactNode };
 type CategoryProps = { title: string; skills: Skill[] };
 
 const SkillCategory: React.FC<CategoryProps> = ({ title, skills }) => (
+
   <div className="mb-6">
     <h3 className="text-sm text-[var(--graytext)] mb-3 tracking-wider font-medium">
 
@@ -35,7 +37,11 @@ const SkillCategory: React.FC<CategoryProps> = ({ title, skills }) => (
     </h3>
 
     <div className="flex flex-wrap gap-3">
+      
       {skills.map((skill) => (
+        <Magnet padding={50} disabled={false} magnetStrength={8}>
+
+
         <span
           className="
       px-3 py-1.5 
@@ -53,6 +59,7 @@ const SkillCategory: React.FC<CategoryProps> = ({ title, skills }) => (
 
           <span className="font-medium">{skill.name}</span>
         </span>
+        </Magnet>
       ))}
     </div>
   </div>
