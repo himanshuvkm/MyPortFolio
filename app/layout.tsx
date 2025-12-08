@@ -9,7 +9,6 @@ import ModeToggle from "./_components/mode";
 
 import SmoothScroll from "./_components/SmoothScroll";
 import ClickSpark from "@/components/ClickSpark";
-import { GravityStarsBackground } from "@/components/animate-ui/components/backgrounds/gravity-stars";
 
 const roboto = Geist({ subsets: ["latin"] });
 const doto = Doto({ subsets: ["latin"], weight: ["400", "700"] });
