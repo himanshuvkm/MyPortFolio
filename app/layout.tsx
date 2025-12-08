@@ -6,9 +6,10 @@ import { ThemeProvider } from "next-themes";
 import Header from "./_components/header";
 import Footer from "./_components/footer";
 import ModeToggle from "./_components/mode";
-import Lenis from "@studio-freight/lenis";
+
 import SmoothScroll from "./_components/SmoothScroll";
 import ClickSpark from "@/components/ClickSpark";
+import { GravityStarsBackground } from "@/components/animate-ui/components/backgrounds/gravity-stars";
 
 const roboto = Geist({ subsets: ["latin"] });
 const doto = Doto({ subsets: ["latin"], weight: ["400", "700"] });
@@ -24,6 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={roboto.className}>
+       
         <SmoothScroll />
         <ClickSpark
           sparkColor="#fff"
@@ -52,6 +54,7 @@ export default function RootLayout({
             </div>
           </ThemeProvider>
         </ClickSpark>
+     
       </body>
     </html>
   );
