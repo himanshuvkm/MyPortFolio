@@ -14,6 +14,7 @@ import Skills from "./_components/skill";
 import Link from "next/link";
 import TextType from "@/components/TextType";
 
+
 function Home() {
   const { resolvedTheme } = useTheme();
   const [currentTime, setCurrentTime] = useState(new Date());

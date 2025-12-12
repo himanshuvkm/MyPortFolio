@@ -1,6 +1,7 @@
 import { Mail, Github, Linkedin } from "lucide-react";
 import { SiX } from "react-icons/si";
 import Link from "next/link";
+import { VisitorCounter } from "@/components/visitor-counter";
 
 export default function Footer() {
   return (
@@ -94,7 +95,7 @@ export default function Footer() {
       {/* BOTTOM ROW */}
       <div className="mt-10 flex justify-between px-8 text-xs text-gray-500">
         <p>2025. All rights reserved</p>
-        <p>Always building. Always learning</p>
+        <p><VisitorCounter/></p>
       </div>
     </footer>
   );
