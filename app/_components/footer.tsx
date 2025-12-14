@@ -93,9 +93,9 @@ export default function Footer() {
       </p>
 
       {/* BOTTOM ROW */}
-      <div className="mt-10 flex justify-between px-8 text-xs text-gray-500">
+      <div className="mt-10 flex justify-between items-center text-xs text-gray-500">
         <p>2025. All rights reserved</p>
-        <p><VisitorCounter/></p>
+        <VisitorCounter />
       </div>
     </footer>
   );
