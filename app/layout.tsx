@@ -9,6 +9,7 @@ import ModeToggle from "./_components/mode";
 
 import SmoothScroll from "./_components/SmoothScroll";
 import ClickSpark from "@/components/ClickSpark";
+import { SparklesCore } from "@/components/ui/sparkles";
 
 const roboto = Geist({ subsets: ["latin"] });
 const doto = Doto({ subsets: ["latin"], weight: ["400", "700"] });
@@ -27,21 +28,30 @@ export default function RootLayout({
        
         <SmoothScroll />
         <ClickSpark
-          sparkColor="#fff"
+          sparkColor="#808080"  
           sparkSize={10}
           sparkRadius={15}
           sparkCount={8}
           duration={400}
         >
-          {/* Your content here */}
-
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange
           >
-            <div className="flex justify-center px-5">
+            <div className="w-full absolute inset-0 h-screen fixed">
+              <SparklesCore
+                id="tsparticlesfullpage"
+                background="transparent"
+                minSize={0.4}
+                maxSize={1}
+                particleDensity={70}
+                className="w-full h-full"
+                particleColor="#A0A0A0" 
+              />
+            </div>
+            <div className="flex justify-center px-5 relative z-20">
               <div className="flex flex-col my-10 w-full max-w-2xl   ">
                 <div className="flex justify-between ">
                   <Header /> <ModeToggle />
