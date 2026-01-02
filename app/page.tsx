@@ -34,7 +34,7 @@ export default function Home() {
         </h2>
 
         <Link
-          href="/projects"
+          href="/Projects"
           className="
     group inline-flex items-center gap-1
     text-sm
