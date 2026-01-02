@@ -18,7 +18,7 @@ export default function OpenSourceContribution() {
         <AccordionItem>
           <AccordionButton>
             <div className="flex items-center justify-between">
-              <span className="text-lg text-neutral-400 font-bold">
+              <span className="text-lg text-[var(--graytext)]">
                 Animate UI
               </span>
             </div>
@@ -43,7 +43,8 @@ export default function OpenSourceContribution() {
                   rel="noopener noreferrer"
                   className="
       relative
-      text-sm text-neutral-200
+      text-md text-[var(--foreground)]
+      font-bold tracking-wide
       transition-all duration-300
       group-hover:underline
       hover:animate-subtle-shake

@@ -90,7 +90,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         </div>
 
         {/* Description */}
-        <p className="text-xs mb-2 text-[var(--graytext)] leading-relaxed">
+        <p className="text-xs font-[latin] mb-2 text-[var(--graytext)] tracking-wide">
           {project.description}
         </p>
 

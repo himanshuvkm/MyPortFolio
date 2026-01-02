@@ -136,21 +136,21 @@ export default function Hero() {
           Full Stack Developer
         </p>
 
-        <p className="text-md text-gray-500 leading-relaxed">
+        <p className="text-md text-[var(--graytext)] leading-relaxed">
           {" "}
           Passionate about creating{" "}
-          <span className="font-medium ">
+          <span className="font-bold tracking-wide ">
             {" "}
             beautiful and functional web experiences{" "}
           </span>{" "}
           . Love working with{" "}
-          <span className="font-medium ">modern frameworks</span> and building{" "}
-          <span className="font-medium "> scalable applications </span> . I
+          <span className="font-medium  ">modern frameworks</span> and building{" "}
+          <span className="font-bold tracking-wide "> scalable applications </span> . I
           enjoy crafting websites with{" "}
-          <span className="font-medium "> React, TypeScript, Tailwind </span> ,
+          <span className="font-bold tracking-wide "> React, TypeScript, Tailwind </span> ,
           and backend systems using{" "}
-          <span className="font-medium "> MongoDB & PostgreSQL </span> . I love
-          both <span className="font-medium "> development & design </span> .
+          <span className=" font-bold tracking-wide"> MongoDB & PostgreSQL </span> . I love
+          both <span className="font-bold tracking-wide "> development & design </span> .
           That means I enjoy creating interfaces that look{" "}
           <span className="font-medium "> clean and feel effortless </span> .
           Always{" "}

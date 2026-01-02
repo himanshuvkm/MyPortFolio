@@ -84,27 +84,27 @@ export default function Footer() {
               </span>
             </p>
             <p>
-              Last visitor:{" "}
               <span className="font-medium text-[var(--foreground)]">
-                Bengaluru, India
+                Delhi, India
               </span>
             </p>
           </div>
 
           {/* Right */}
           <div className="space-y-1 md:text-right">
-            <p>
-              Delhi, <span>IST</span>
+           
+            <div>
+              Visits:{" "}
+              <span className="font-medium pr-2 text-[var(--foreground)]">
+                <VisitorCounter />
+              </span>
+            </div>
+             <p>
+            
               <span className="px-2 font-medium">
                 {format(currentTime, "hh:mm:ss a")}
               </span>
             </p>
-            <div>
-              Visits:{" "}
-              <span className="font-medium text-[var(--foreground)]">
-                <VisitorCounter />
-              </span>
-            </div>
           </div>
         </div>
 

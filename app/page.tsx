@@ -11,7 +11,7 @@ import { projects } from "./Projects/projects";
 import Footer from "./_components/footer";
 
 export default function Home() {
-   const featuredProject = projects[0]
+  const featuredProject = projects[0];
   const { resolvedTheme } = useTheme();
   return (
     <motion.div layout className="flex flex-col gap-6">
@@ -27,35 +27,48 @@ export default function Home() {
           colorScheme={resolvedTheme === "dark" ? "dark" : "light"}
         />
       </div>
-      
 
+      <div className="flex items-baseline justify-between mt-4">
+        <h2 className="text-2xl font-[Instrument_Serif] tracking-wide">
+          Projects
+        </h2>
 
-
-     <div className="flex items-baseline justify-between mt-4">
-  <h2 className="text-2xl font-[Instrument_Serif] tracking-wide">
-  Projects
-  </h2>
-
-  <Link
-    href="/projects"
-    className="
-      text-sm underline underline-offset-4
-      text-[var(--graytext)]
-      hover:text-[var(--foreground)]
-      transition
+        <Link
+          href="/projects"
+          className="
+    group inline-flex items-center gap-1
+    text-sm
+    text-muted-foreground
+    transition-colors duration-200
+    hover:text-foreground
+  "
+        >
+          <span
+            className="
+      underline underline-offset-4
+      decoration-transparent
+      transition-colors duration-200
+      group-hover:decoration-current
     "
-  >
-    View all projects →
-  </Link>
-</div>
+          >
+            View all projects
+          </span>
 
-<ProjectCard project={featuredProject} />
+          <span
+            className="
+      transition-transform duration-200
+      group-hover:translate-x-1
+    "
+          >
+            →
+          </span>
+        </Link>
+      </div>
 
-
-
+      <ProjectCard project={featuredProject} />
 
       {/* View all button */}
-             <Footer />
+      <Footer />
     </motion.div>
   );
 }
