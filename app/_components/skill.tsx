@@ -55,32 +55,38 @@ const skills = [
 
 export default function Skills() {
   return (
-   <section>
-  <h1 className="text-2xl font-[Instrument_Serif] tracking-wide mb-4 pb-4">
-    Skills
-  </h1>
+    <section>
+      <h1 className="text-2xl font-[Instrument_Serif] tracking-wide mb-4 pb-4">
+        Skills
+      </h1>
 
-  <div className="flex flex-wrap gap-3 mb-4">
-    {skills.map((skill) => (
-      <Magnet key={skill.name} padding={40} magnetStrength={8}>
-        <span
-          className="
-            flex items-center gap-2
-            rounded-lg border border-[var(--border)]
-            bg-[var(--muted)]
-            px-3 py-1.5 text-xs font-medium
-            transition-all cursor-pointer
-            hover:bg-[color-mix(in oklch, var(--muted), black 10%)]
-            hover:border-[color-mix(in oklch, var(--border), white 20%)]
-          "
-        >
-          {skill.icon}
-          {skill.name}
-        </span>
-      </Magnet>
-    ))}
-  </div>
-</section>
-
+      <div className="flex flex-wrap justify-center sm:justify-start gap-3 mb-4">
+        {skills.map((skill) => (
+          <Magnet
+            key={skill.name}
+            padding={24}          // ↓ reduced for mobile
+            magnetStrength={10}
+          >
+            <span
+              className="
+                flex items-center gap-2
+                rounded-lg
+                border border-[var(--border)]
+                bg-[var(--muted)]
+                px-3 py-2
+                text-xs font-medium
+                cursor-pointer
+                transition-all
+                md:hover:bg-[color-mix(in oklch, var(--muted), black 10%)]
+                md:hover:border-[color-mix(in oklch, var(--border), white 20%)]
+              "
+            >
+              {skill.icon}
+              {skill.name}
+            </span>
+          </Magnet>
+        ))}
+      </div>
+    </section>
   );
 }

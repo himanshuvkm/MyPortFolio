@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect, useState } from "react";
 import { format } from "date-fns";
 import { VisitorCounter } from "@/components/visitor-counter";
@@ -8,15 +9,22 @@ import Link from "next/link";
 
 export default function Footer() {
   const [currentTime, setCurrentTime] = useState(new Date());
+
   useEffect(() => {
     const timer = setInterval(() => setCurrentTime(new Date()), 1000);
     return () => clearInterval(timer);
   }, []);
+
   return (
-    <footer className="mt-5 text-sm text-[var(--graytext)] mt-4 pt-4">
-          <hr className="pb-4" />
-      <h1 className="text-2xl font-[Instrument_Serif] tracking-wide text-center ">Let's Connect</h1>
-      <div className="flex flex-wrap items-center gap-6 text-sm py-6 justify-center">
+    <footer className="mt-6 pt-4 text-sm text-[var(--graytext)]">
+      <hr className="pb-4" />
+
+      <h1 className="text-2xl font-[Instrument_Serif] tracking-wide text-center">
+        Let&apos;s Connect
+      </h1>
+
+      {/* Social Links */}
+      <div className="flex flex-wrap items-center justify-center gap-5 text-sm py-6">
         <Link
           href="https://github.com/himanshuvkm"
           target="_blank"
@@ -63,8 +71,11 @@ export default function Footer() {
       </div>
 
       <hr className="pb-4" />
+
+      {/* Meta */}
       <div className="max-w-6xl mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between gap-4">
+        <div className="flex flex-col md:flex-row justify-between gap-6 text-center md:text-left">
+          {/* Left */}
           <div className="space-y-1">
             <p>
               crafted by{" "}
@@ -83,14 +94,14 @@ export default function Footer() {
           {/* Right */}
           <div className="space-y-1 md:text-right">
             <p>
-              Delhi, <span className=" ">IST</span>
-              <span className="px-2 font-medium ">
+              Delhi, <span>IST</span>
+              <span className="px-2 font-medium">
                 {format(currentTime, "hh:mm:ss a")}
               </span>
             </p>
             <div>
-              Visits :{" "}
-              <span className="font-medium text-[var(--foreground)] pr-2">
+              Visits:{" "}
+              <span className="font-medium text-[var(--foreground)]">
                 <VisitorCounter />
               </span>
             </div>
