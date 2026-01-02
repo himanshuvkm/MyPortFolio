@@ -27,22 +27,20 @@ export function VisitorCounter() {
 
   return (
     <div
-      className="
-        inline-flex items-center gap-2
-        px-3 py-1.5 rounded-lg 
-        
-        text-green-500 
-        text-xs font-semibold
-        border border-green-700/20
-      "
-    >
-      <Eye size={14} className="opacity-80" />
+  className="
+    inline-flex gap-3
+    text-xs font-medium
+    text-[var(--graytext)]
+  "
+>
+  {loading ? (
+    <span className="animate-pulse opacity-70">…</span>
+  ) : (
+    <span className="text-[var(--foreground)]">
+      {count?.toLocaleString() || 0}
+    </span>
+  )}
+</div>
 
-      {loading ? (
-        <span className="animate-pulse">...</span>
-      ) : (
-        <span>{count?.toLocaleString() || 0}</span>
-      )}
-    </div>
   )
 }

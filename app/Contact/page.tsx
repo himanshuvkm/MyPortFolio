@@ -2,6 +2,7 @@
 
 import { useActionState } from "react";
 import { sendMessage } from "@/lib/action";
+import Footer from "../_components/footer";
 
 export default function ContactForm() {
   const [state, formAction] = useActionState(sendMessage, {
@@ -9,13 +10,13 @@ export default function ContactForm() {
     error: null,
   });
   return (
-    <div className="py-10 tracking-tight leading-relaxed max-w-xl">
+    <div className="py-10 tracking-tight leading-relaxed max-w-xl mt-5">
 
       {/* Heading */}
-      <h1 className="text-3xl font-serif mb-4">Contact 📬</h1>
+      <h1 className="text-2xl font-[Instrument_Serif] tracking-wide mb-4 ">Contact Me</h1>
 
       {/* Intro */}
-      <p className="text-base mb-6 ">
+      <p className=" mb-6 ">
         Whether you want to collaborate, ask a question, or just say hi — feel free to reach out.
         I usually reply within a day.
       </p>
@@ -73,6 +74,8 @@ export default function ContactForm() {
           This form sends your message straight to my inbox — I’ll get back to you soon!
         </p>
       </div>
+             <Footer />
     </div>
+    
   );
 }

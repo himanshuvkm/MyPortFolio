@@ -14,27 +14,27 @@ export type Project = {
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
-   <div
+  <div
   className="
     group
-    flex flex-col md:flex-row gap-6
-    p-4 rounded-xl 
+    flex flex-col md:flex-row gap-4
+    p-3 rounded-xl
     border border-[var(--border)]
     bg-[var(--muted)]
-    transition-all duration-500
-    hover:bg-[color-mix(in oklch, var(--muted), black 10%)]
-    hover:scale-[1.015]
-    hover:shadow-[0_0_35px_rgba(138,43,226,0.25)]
+    transition-all duration-300
+    hover:bg-[color-mix(in oklch, var(--muted), black 8%)]
+    hover:scale-[1.01]
+    hover:shadow-[0_0_20px_rgba(0,0,0,0.25)]
   "
 >
   {/* Left Image */}
   <div
     className="
-      relative w-full md:w-1/2 aspect-video overflow-hidden 
+      relative w-full md:w-1/2 aspect-[16/10] overflow-hidden
       rounded-lg border border-[var(--border)]
-      transition-all duration-500
-      group-hover:border-purple-500/40
-      group-hover:shadow-[0_0_25px_rgba(138,43,226,0.35)]
+      transition-all duration-300
+      group-hover:border-[color-mix(in oklch, var(--border), white 20%)]
+      group-hover:shadow-[0_0_15px_rgba(0,0,0,0.3)]
     "
   >
     <Image
@@ -43,10 +43,9 @@ export default function ProjectCard({ project }: { project: Project }) {
       fill
       placeholder="blur"
       className="
-        object-cover rounded-lg 
-        transition-all duration-500 ease-out
+        object-cover rounded-lg
+        transition-all duration-300 ease-out
         group-hover:scale-105
-        group-hover:brightness-110
       "
     />
   </div>
@@ -54,66 +53,56 @@ export default function ProjectCard({ project }: { project: Project }) {
   {/* Right Content */}
   <div className="flex flex-col md:w-1/2">
     {/* Title + Buttons */}
-    <div className="flex items-center justify-between mb-2">
-      <h2 className="text-lg font-semibold flex items-center gap-2 text-[var(--foreground)]">
+    <div className="flex items-center justify-between mb-1">
+      <h2 className="text-sm  text-[var(--foreground)]">
         {project.title}
       </h2>
 
-      {/* Buttons */}
-      <div className="flex items-center gap-3">
-        {/* LIVE BUTTON */}
+      <div className="flex items-center gap-2">
         <a
           href={project.demo}
           target="_blank"
           className="
-            px-3 py-1 text-xs rounded-md 
-            bg-[var(--muted)] 
+            p-1.5 text-xs rounded-md
+            bg-[var(--muted)]
             border border-[var(--border)]
-            text-[var(--foreground)]
-            hover:bg-[color-mix(in oklch, var(--muted), black 10%)]
+            hover:bg-[color-mix(in oklch, var(--muted), black 8%)]
             transition
           "
         >
           <FaExternalLinkAlt />
         </a>
 
-        {/* GITHUB BUTTON */}
         <a
           href={project.link}
           target="_blank"
           className="
-            px-3 py-1 flex items-center gap-1 text-xs rounded-md
+            p-1.5 rounded-md
             bg-[var(--muted)]
             border border-[var(--border)]
-            text-[var(--foreground)]
-            hover:bg-[color-mix(in oklch, var(--muted), black 10%)]
+            hover:bg-[color-mix(in oklch, var(--muted), black 8%)]
             transition
           "
         >
-          <FaGithub size={16} />
+          <FaGithub size={14} />
         </a>
       </div>
     </div>
 
     {/* Description */}
-    <p className="text-xs mb-3 text-[var(--graytext)]">
+    <p className="text-xs mb-2 text-[var(--graytext)] leading-relaxed">
       {project.description}
     </p>
 
-    <p className="text-xs font-semibold mb-2 text-[var(--graytext)]">
-      Technologies Used:
-    </p>
-
-    {/* Tech Stack */}
-    <div className="flex flex-wrap gap-2">
+    {/* Tech */}
+    <div className="flex flex-wrap gap-1.5">
       {project.tech.map((t) => (
         <span
           key={t}
           className="
-            px-3 py-1 text-xs rounded-md
+            px-2 py-0.5 text-[11px] rounded-md
             bg-[var(--muted)]
             border border-[var(--border)]
-            text-[var(--foreground)]
           "
         >
           {t}
@@ -122,6 +111,7 @@ export default function ProjectCard({ project }: { project: Project }) {
     </div>
   </div>
 </div>
+
 
   );
 }

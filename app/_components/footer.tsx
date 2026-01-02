@@ -1,101 +1,106 @@
-import { Mail, Github, Linkedin } from "lucide-react";
+"use client";
+import { useEffect, useState } from "react";
+import { format } from "date-fns";
+import { VisitorCounter } from "@/components/visitor-counter";
+import { Mail, Github, Linkedin, Paperclip } from "lucide-react";
 import { SiX } from "react-icons/si";
 import Link from "next/link";
-import { VisitorCounter } from "@/components/visitor-counter";
 
 export default function Footer() {
+  const [currentTime, setCurrentTime] = useState(new Date());
+  useEffect(() => {
+    const timer = setInterval(() => setCurrentTime(new Date()), 1000);
+    return () => clearInterval(timer);
+  }, []);
   return (
-    <footer className="pt-16 text-center text-[var(--foreground)]">
-      {/* CONNECT CARD */}
-      <div
-        className="
-      max-w-2xl mx-auto p-8 
-      border border-[var(--border)] 
-      rounded-xl 
-      bg-[var(--muted)]
-      transition-colors
-    "
-      >
-        <h2 className="text-2xl font-semibold mb-2">Let's Connect</h2>
+    <footer className="mt-5 text-sm text-[var(--graytext)] mt-4 pt-4">
+          <hr className="pb-4" />
+      <h1 className="text-2xl font-[Instrument_Serif] tracking-wide text-center ">Let's Connect</h1>
+      <div className="flex flex-wrap items-center gap-6 text-sm py-6 justify-center">
+        <Link
+          href="https://github.com/himanshuvkm"
+          target="_blank"
+          className="flex items-center gap-2 hover:text-strong transition-colors"
+        >
+          <Github size={16} />
+          <span>GitHub</span>
+        </Link>
 
-        <p className="text-[var(--graytext)] mb-6">
-          Feel free to reach out through any of these platforms
-        </p>
+        <Link
+          href="https://x.com/Himanshu_10147"
+          target="_blank"
+          className="flex items-center gap-2 hover:text-strong transition-colors"
+        >
+          <SiX size={14} />
+          <span>Twitter</span>
+        </Link>
 
-        {/* BUTTON LINKS */}
-        <div className="flex flex-wrap justify-center gap-4">
-          <Link
-            href="mailto:himanshuvkm252@gmail.com"
-            target="_blank"
-            className="
-    flex items-center gap-2 px-4 py-2 text-sm 
-    bg-[var(--muted)] border border-[var(--border)] rounded-lg
-    hover:bg-[color-mix(in oklch, var(--muted), black 10%)]
-    transition-all
-  "
-          >
-            <Mail size={16} />
-            <span className="hidden sm:inline">Email</span>
-          </Link>
+        <Link
+          href="https://www.linkedin.com/in/himanshu-vishwakarma-2275a5354"
+          target="_blank"
+          className="flex items-center gap-2 hover:text-strong transition-colors"
+        >
+          <Linkedin size={16} />
+          <span>LinkedIn</span>
+        </Link>
 
-          <Link
-            href="https://github.com/himanshuvkm"
-            target="_blank"
-            className="
-    flex items-center gap-2 px-4 py-2 text-sm 
-    bg-[var(--muted)] border border-[var(--border)] rounded-lg
-    hover:bg-[color-mix(in oklch, var(--muted), black 10%)]
-    transition-all
-  "
-          >
-            <Github size={16} />
-            <span className="hidden sm:inline">GitHub</span>
-          </Link>
+        <Link
+          href="mailto:himanshuvkm252@gmail.com"
+          className="flex items-center gap-2 hover:text-strong transition-colors"
+        >
+          <Mail size={16} />
+          <span>Mail</span>
+        </Link>
 
-          <Link
-            href="https://x.com/Himanshu_10147"
-            target="_blank"
-            className="
-    flex items-center gap-2 px-4 py-2 text-sm 
-    bg-[var(--muted)] border border-[var(--border)] rounded-lg
-    hover:bg-[color-mix(in oklch, var(--muted), black 10%)]
-    transition-all
-  "
-          >
-            <SiX size={14} />
-            <span className="hidden sm:inline">Twitter</span>
-          </Link>
-
-          <Link
-            href="https://www.linkedin.com/in/himanshu-vishwakarma-2275a5354"
-            target="_blank"
-            className="
-    flex items-center gap-2 px-4 py-2 text-sm 
-    bg-[var(--muted)] border border-[var(--border)] rounded-lg
-    hover:bg-[color-mix(in oklch, var(--muted), black 10%)]
-    transition-all
-  "
-          >
-            <Linkedin size={16} />
-            <span className="hidden sm:inline">LinkedIn</span>
-          </Link>
-        </div>
+        <Link
+          href="/resume.pdf"
+          target="_blank"
+          className="flex items-center gap-2 hover:text-strong transition-colors"
+        >
+          <Paperclip size={16} />
+          <span>Resume</span>
+        </Link>
       </div>
 
-      {/* QUOTE */}
-      <p className="italic text-[var(--graytext)] text-sm mt-10">
-        "Progress beats perfection—every single time"
-      </p>
+      <hr className="pb-4" />
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="flex flex-col md:flex-row justify-between gap-4">
+          <div className="space-y-1">
+            <p>
+              crafted by{" "}
+              <span className="font-medium text-[var(--foreground)]">
+                Himanshu
+              </span>
+            </p>
+            <p>
+              Last visitor:{" "}
+              <span className="font-medium text-[var(--foreground)]">
+                Bengaluru, India
+              </span>
+            </p>
+          </div>
 
-      {/* SIGNATURE */}
-      <p className="italic text-[var(--graytext)] text-sm mt-1">
-        Designed & Made with <span className="text-pink-500">❤️</span>
-      </p>
+          {/* Right */}
+          <div className="space-y-1 md:text-right">
+            <p>
+              Delhi, <span className=" ">IST</span>
+              <span className="px-2 font-medium ">
+                {format(currentTime, "hh:mm:ss a")}
+              </span>
+            </p>
+            <div>
+              Visits :{" "}
+              <span className="font-medium text-[var(--foreground)] pr-2">
+                <VisitorCounter />
+              </span>
+            </div>
+          </div>
+        </div>
 
-      {/* BOTTOM ROW */}
-      <div className="mt-10 flex justify-between items-center text-xs text-gray-500">
-        <p>2025. All rights reserved</p>
-        <VisitorCounter />
+        {/* Bottom */}
+        <div className="mt-6 text-center text-xs">
+          © 2026 Himanshu Vishwakarma.
+        </div>
       </div>
     </footer>
   );
