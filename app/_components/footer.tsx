@@ -73,46 +73,55 @@ export default function Footer() {
       <hr className="pb-4" />
 
       {/* Meta */}
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between gap-6 text-center md:text-left">
-          {/* Left */}
-          <div className="space-y-1">
-            <p>
-              crafted by{" "}
-              <span className="font-medium text-[var(--foreground)]">
-                Himanshu
-              </span>
-            </p>
-            <p>
-              <span className="font-medium text-[var(--foreground)]">
-                Delhi, India
-              </span>
-            </p>
-          </div>
+<div className="max-w-6xl mx-auto px-4">
+  {/* Top meta */}
+  <div
+    className="
+      flex items-start justify-between
+      gap-4
+      text-xs sm:text-sm
+    "
+  >
+    {/* Left */}
+    <div className="space-y-1 text-left">
+      <p>
+        crafted by{" "}
+        <span className="font-medium text-[var(--foreground)]">
+          Himanshu
+        </span>
+      </p>
+      <p>
+        <span className="font-medium text-[var(--foreground)]">
+          Delhi, India
+        </span>
+      </p>
+    </div>
 
-          {/* Right */}
-          <div className="space-y-1 md:text-right">
-           
-            <div>
-              Visits:{" "}
-              <span className="font-medium pr-2 text-[var(--foreground)]">
-                <VisitorCounter />
-              </span>
-            </div>
-             <p>
-            
-              <span className="px-2 font-medium">
-                {format(currentTime, "hh:mm:ss a")}
-              </span>
-            </p>
-          </div>
-        </div>
+    {/* Right */}
+    <div className="space-y-1 text-right">
+      <p>
+        Visits{" "}
+        <span className="font-medium text-[var(--foreground)]">
+          <VisitorCounter />
+        </span>
+      </p>
+      <p>
+     <span className="hidden sm:inline">
+  {format(currentTime, "hh:mm:ss a")}
+</span>
+<span className="sm:hidden">
+  {format(currentTime, "hh:mm a")}
+</span>
+      </p>
+    </div>
+  </div>
 
-        {/* Bottom */}
-        <div className="mt-6 text-center text-xs">
-          © 2026 Himanshu Vishwakarma.
-        </div>
-      </div>
+  {/* Bottom */}
+  <div className="mt-6 text-center text-xs ">
+    © 2026 Himanshu Vishwakarma.
+  </div>
+</div>
+
     </footer>
   );
 }
