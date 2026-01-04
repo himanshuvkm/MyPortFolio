@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import logo from "@/public/logome.png";
+import logo from "@/public/logome.jpg";
 import { SiX } from "react-icons/si";
 import { IoLogoGithub } from "react-icons/io5";
 import Link from "next/link";
@@ -109,7 +109,7 @@ export default function Hero() {
               />
             </Link>
 
-            <Link href="https://x.com/Himanshu_10147" target="_blank">
+            <Link href="https://x.com/himanshu_9148" target="_blank">
               <SiX
                 size={16}
                 className="text-black dark:text-white hover:scale-110 transition"

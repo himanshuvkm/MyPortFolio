@@ -35,7 +35,7 @@ export default function Footer() {
         </Link>
 
         <Link
-          href="https://x.com/Himanshu_10147"
+          href="https://x.com/himanshu_9148"
           target="_blank"
           className="flex items-center gap-2 hover:text-strong transition-colors"
         >
@@ -99,12 +99,12 @@ export default function Footer() {
 
     {/* Right */}
     <div className="space-y-1 text-right">
-      <p>
+      <div>
         Visits{" "}
         <span className="font-medium text-[var(--foreground)]">
           <VisitorCounter />
         </span>
-      </p>
+      </div>
       <p>
      <span className="hidden sm:inline">
   {format(currentTime, "hh:mm:ss a")}
