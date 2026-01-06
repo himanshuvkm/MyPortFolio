@@ -25,7 +25,7 @@ export const newsreader = Newsreader({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("www.himanshuvkm.site"),
+  metadataBase: new URL("https://www.himanshuvkm.site"),
 
   title: {
     default: "Himanshu Vishwakarma – Full Stack Web Developer (Next.js, React)",
