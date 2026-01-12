@@ -58,7 +58,7 @@ export const projects = [
   },
   {
     emoji: "💬",
-    title: "Real-Time Chat Application",
+    title: "Retro_Chat",
     link: "https://github.com/himanshuvkm/ChatApplication",
     demo: "https://chatapplication-8385.onrender.com",
     image: chatimg,
