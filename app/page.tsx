@@ -11,7 +11,9 @@ import { projects } from "./Projects/projects";
 import Footer from "./_components/footer";
 
 export default function Home() {
-  const featuredProject = projects[0];
+  const featuredProject1 = projects[0];
+  const featuredProject2 = projects[1];
+
   const { resolvedTheme } = useTheme();
   return (
     <motion.div layout className="flex flex-col gap-6">
@@ -65,7 +67,8 @@ export default function Home() {
         </Link>
       </div>
 
-      <ProjectCard project={featuredProject} />
+      <ProjectCard project={featuredProject1} />
+      <ProjectCard project={featuredProject2} />
 
       {/* View all button */}
       <Footer />
