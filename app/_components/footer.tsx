@@ -6,7 +6,6 @@ import { VisitorCounter } from "@/components/visitor-counter";
 import { Mail, Github, Linkedin, Paperclip } from "lucide-react";
 import { SiX } from "react-icons/si";
 import Link from "next/link";
-
 export default function Footer() {
   const [currentTime, setCurrentTime] = useState(new Date());
 
@@ -60,68 +59,68 @@ export default function Footer() {
           <span>Mail</span>
         </Link>
 
-        <Link
-          href="/resume.pdf"
-          target="_blank"
+        <a
+          href="/Himanshu_Resume.pdf"
+          
+          download="Himanshu_Vishwakarma_Resume.pdf"
           className="flex items-center gap-2 hover:text-strong transition-colors"
         >
           <Paperclip size={16} />
           <span>Resume</span>
-        </Link>
+        </a>
       </div>
 
       <hr className="pb-4" />
 
       {/* Meta */}
-<div className="max-w-6xl mx-auto px-4">
-  {/* Top meta */}
-  <div
-    className="
+      <div className="max-w-6xl mx-auto px-4">
+        {/* Top meta */}
+        <div
+          className="
       flex items-start justify-between
       gap-4
       text-xs sm:text-sm
     "
-  >
-    {/* Left */}
-    <div className="space-y-1 text-left">
-      <p>
-        crafted by{" "}
-        <span className="font-medium text-[var(--foreground)]">
-          Himanshu
-        </span>
-      </p>
-      <p>
-        <span className="font-medium text-[var(--foreground)]">
-          Delhi, India
-        </span>
-      </p>
-    </div>
+        >
+          {/* Left */}
+          <div className="space-y-1 text-left">
+            <p>
+              crafted by{" "}
+              <span className="font-medium text-[var(--foreground)]">
+                Himanshu
+              </span>
+            </p>
+            <p>
+              <span className="font-medium text-[var(--foreground)]">
+                Delhi, India
+              </span>
+            </p>
+          </div>
 
-    {/* Right */}
-    <div className="space-y-1 text-right">
-      <div>
-        Visits{" "}
-        <span className="font-medium text-[var(--foreground)]">
-          <VisitorCounter />
-        </span>
+          {/* Right */}
+          <div className="space-y-1 text-right">
+            <div>
+              Visits{" "}
+              <span className="font-medium text-[var(--foreground)]">
+                <VisitorCounter />
+              </span>
+            </div>
+            <p>
+              <span className="hidden sm:inline">
+                {format(currentTime, "hh:mm:ss a")}
+              </span>
+              <span className="sm:hidden">
+                {format(currentTime, "hh:mm a")}
+              </span>
+            </p>
+          </div>
+        </div>
+
+        {/* Bottom */}
+        <div className="mt-6 text-center text-xs ">
+          © 2026 Himanshu Vishwakarma.
+        </div>
       </div>
-      <p>
-     <span className="hidden sm:inline">
-  {format(currentTime, "hh:mm:ss a")}
-</span>
-<span className="sm:hidden">
-  {format(currentTime, "hh:mm a")}
-</span>
-      </p>
-    </div>
-  </div>
-
-  {/* Bottom */}
-  <div className="mt-6 text-center text-xs ">
-    © 2026 Himanshu Vishwakarma.
-  </div>
-</div>
-
     </footer>
   );
 }
