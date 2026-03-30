@@ -67,6 +67,56 @@ export default function OpenSourceContribution() {
             <hr className="mt-2" />
           </AccordionPanel>
         </AccordionItem>
+
+        <AccordionItem>
+          <AccordionButton>
+            <div className="flex items-center justify-between">
+              <span className="text-lg text-[var(--graytext)]">
+                mx-icons
+              </span>
+            </div>
+          </AccordionButton>
+
+          <AccordionPanel>
+            <div className="space-y-2 text-sm text-muted-foreground">
+              <p className="group flex items-start gap-2">
+                <GitMerge
+                  size={20}
+                  className="
+      mt-[2px]
+      text-purple-500
+      transition-transform duration-300
+      group-hover:-rotate-6
+    "
+                />
+
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+      relative
+      text-md text-[var(--foreground)]
+      font-bold tracking-wide
+      transition-all duration-300
+      group-hover:underline
+      hover:animate-subtle-shake
+    "
+                >
+                  Fix: sync dark mode with system preference changes
+                </a>
+              </p>
+
+              <ul className=" pl-6">
+                <li>
+                  {" "}
+                  Implemented logic to synchronize the application's dark mode seamlessly with system preference changes, ensuring a consistent user experience.
+                </li>
+              </ul>
+            </div>
+            <hr className="mt-2" />
+          </AccordionPanel>
+        </AccordionItem>
       </Accordion>
     </section>
   );
