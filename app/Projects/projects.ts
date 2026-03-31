@@ -3,6 +3,7 @@ import incblogimg from "@/public/incblog.png";
 import readmeaiimg from "@/public/readmeai.png";
 import chatimg from "@/public/retrochat.jpg";
 import housetrialimg from "@/public/got.png";
+import repolensimg from "@/public/repolens.png";
 
 export const projects = [
   {
@@ -45,7 +46,18 @@ export const projects = [
       "Sentry",
     ],
   },
-  
+  {
+  emoji: "🔍",
+  title: "RepoLens",
+  link: "https://github.com/himanshuvkm/Repolens",
+  demo: "https://repolens-git.vercel.app",
+  image: repolensimg,
+  category: "Full Stack + AI | MERN + LLM",
+  description:
+    "An AI-powered tool that analyzes any GitHub repository instantly. Just paste a repo URL to get a comprehensive report including tech stack detection, code insights, project summary, README breakdown, and potential improvements.",
+  tech: ["React", "Tailwind", "Node.js", "Express", "MongoDB", "OpenAI API", "GitHub API"],
+}
+  ,
   {
     emoji: "🐉",
     title: "House_Trial (A Fun Web Experience)",
