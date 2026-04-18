@@ -91,7 +91,7 @@ export default function OpenSourceContribution() {
                 />
 
                 <a
-                  href="#"
+                  href="https://github.com/ig-imanish/mx-icons/pull/38"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="
