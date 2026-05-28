@@ -10,7 +10,7 @@ export const projects = [
     emoji: "💸",
     title: "FinTrack (AI Personal Finance App)",
     link: "https://github.com/himanshuvkm/FinTrack",
-    demo: "https://fintrack-nine-wine.vercel.app",
+    demo: "https://finnntrack.vercel.app",
     image: fintrackimg,
     category: "Full Stack | Personal",
     description:

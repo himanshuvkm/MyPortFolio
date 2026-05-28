@@ -80,7 +80,7 @@ export default function OpenSourceContribution() {
           <AccordionPanel>
             <div className="space-y-2 text-sm text-muted-foreground">
               <p className="group flex items-start gap-2">
-                <GitMerge
+                <GitMerge 
                   size={20}
                   className="
       mt-[2px]
@@ -90,7 +90,7 @@ export default function OpenSourceContribution() {
     "
                 />
 
-                <a
+                <a  
                   href="https://github.com/ig-imanish/mx-icons/pull/38"
                   target="_blank"
                   rel="noopener noreferrer"
