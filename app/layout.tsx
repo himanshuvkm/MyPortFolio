@@ -159,7 +159,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <div className="flex justify-center px-5 relative z-20">
-              <div className="flex flex-col my-5 w-full max-w-2xl   ">
+              <div className="flex flex-col my-5 w-full max-w-3xl   ">
                 <div className="flex justify-between ">
                   <Header />
                 </div>

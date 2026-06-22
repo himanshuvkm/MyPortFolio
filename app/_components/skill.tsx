@@ -55,7 +55,7 @@ const skills = [
 
 export default function Skills() {
   return (
-    <section>
+    <section className="pb-10">
       <h2 className="text-2xl font-[Instrument_Serif] tracking-wide mb-4 pb-4">
         Skills
       </h2>

@@ -9,7 +9,7 @@ import { ExternalLink, Github, GitMerge } from "lucide-react";
 
 export default function OpenSourceContribution() {
   return (
-    <section className="space-y-4">
+    <section className="space-y-4 my-10">
       <h2 className="text-2xl font-[Instrument_Serif]">
         Open Source Contributions
       </h2>

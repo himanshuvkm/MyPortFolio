@@ -10,6 +10,11 @@ import ProjectCard from "./Projects/projectcard";
 import { projects } from "./Projects/projects";
 import Footer from "./_components/footer";
 
+const calendarTheme = {
+  light: ["#ebebeb", "#c6c5c5", "#999999", "#555555", "#000000"],
+  dark: ["#161b22", "#3a3a3c", "#6e6e73", "#aeaeb2", "#ffffff"],
+};
+
 export default function Home() {
   const featuredProject1 = projects[0];
   const featuredProject2 = projects[1];
@@ -27,6 +32,7 @@ export default function Home() {
         <GitHubCalendar
           username="himanshuvkm"
           colorScheme={resolvedTheme === "dark" ? "dark" : "light"}
+          theme={calendarTheme}
         />
       </div>
 

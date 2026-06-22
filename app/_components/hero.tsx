@@ -97,7 +97,7 @@ export default function Hero() {
       <div className="space-y-2">
         {/* Name + Icons */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-          <h1 className="text-3xl font-[Instrument_Serif] text-center sm:text-left">
+          <h1 className="text-4xl font-[Instrument_Serif] text-center sm:text-left">
             Himanshu Vishwakarma
           </h1>
 
