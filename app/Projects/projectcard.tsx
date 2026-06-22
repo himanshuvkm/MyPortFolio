@@ -12,7 +12,13 @@ export type Project = {
   tech: string[];
 };
 
-export default function ProjectCard({ project }: { project: Project }) {
+export default function ProjectCard({
+  project,
+  titleAs: TitleTag = "h3",
+}: {
+  project: Project;
+  titleAs?: "h2" | "h3";
+}) {
   return (
     <div
       className="
@@ -54,9 +60,9 @@ export default function ProjectCard({ project }: { project: Project }) {
       <div className="flex flex-col md:w-1/2">
         {/* Title + Actions */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-1">
-          <h2 className="text-sm text-[var(--foreground)]">
+          <TitleTag className="text-sm text-[var(--foreground)]">
             {project.title}
-          </h2>
+          </TitleTag>
 
           <div className="flex items-center gap-2 sm:justify-end">
             <a

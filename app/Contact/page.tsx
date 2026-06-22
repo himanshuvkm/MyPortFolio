@@ -43,6 +43,7 @@ export default function ContactForm() {
             required
             type="text"
             placeholder="Your Name"
+            aria-label="Your Name"
             className="w-full p-2 bg-transparent border border-gray-700 rounded-md"
           />
 
@@ -51,6 +52,7 @@ export default function ContactForm() {
             required
             type="email"
             placeholder="Your Email"
+            aria-label="Your Email"
             className="w-full p-2 bg-transparent border border-gray-700 rounded-md"
           />
 
@@ -58,6 +60,7 @@ export default function ContactForm() {
             name="message"
             required
             placeholder="Your Message"
+            aria-label="Your Message"
             rows={4}
             className="w-full p-2 bg-transparent border border-gray-700 rounded-md"
           ></textarea>

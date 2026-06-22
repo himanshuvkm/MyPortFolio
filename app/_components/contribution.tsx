@@ -10,9 +10,9 @@ import { ExternalLink, Github, GitMerge } from "lucide-react";
 export default function OpenSourceContribution() {
   return (
     <section className="space-y-4">
-      <h1 className="text-2xl font-[Instrument_Serif]">
+      <h2 className="text-2xl font-[Instrument_Serif]">
         Open Source Contributions
-      </h1>
+      </h2>
 
       <Accordion>
         <AccordionItem>
@@ -110,7 +110,7 @@ export default function OpenSourceContribution() {
               <ul className=" pl-6">
                 <li>
                   {" "}
-                  Implemented logic to synchronize the application's dark mode seamlessly with system preference changes, ensuring a consistent user experience.
+                  Implemented logic to synchronize the application&apos;s dark mode seamlessly with system preference changes, ensuring a consistent user experience.
                 </li>
               </ul>
             </div>

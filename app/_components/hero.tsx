@@ -97,9 +97,9 @@ export default function Hero() {
       <div className="space-y-2">
         {/* Name + Icons */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-          <h2 className="text-3xl font-[Instrument_Serif] text-center sm:text-left">
+          <h1 className="text-3xl font-[Instrument_Serif] text-center sm:text-left">
             Himanshu Vishwakarma
-          </h2>
+          </h1>
 
           <div className="flex items-center justify-center sm:justify-end gap-4">
             <Link href="https://github.com/himanshuvkm" target="_blank">
@@ -133,32 +133,30 @@ export default function Hero() {
         </div>
 
         <p className="text-gray-600 text-center sm:text-left">
-          Full Stack Developer
+          Full Stack Web Developer
         </p>
 
         <p className="text-md text-[var(--graytext)] leading-relaxed">
-          {" "}
-          Passionate about creating{" "}
-          <span className="font-bold tracking-wide ">
-            {" "}
-            beautiful and functional web experiences{" "}
+          I am a{" "}
+          <span className="font-bold tracking-wide">
+            Full Stack Web Developer
           </span>{" "}
-          . Love working with{" "}
-          <span className="font-medium  ">modern frameworks</span> and building{" "}
-          <span className="font-bold tracking-wide "> scalable applications </span> . I
-          enjoy crafting websites with{" "}
-          <span className="font-bold tracking-wide "> React, TypeScript, Tailwind </span> ,
-          and backend systems using{" "}
-          <span className=" font-bold tracking-wide"> MongoDB & PostgreSQL </span> . I love
-          both <span className="font-bold tracking-wide "> development & design </span> .
-          That means I enjoy creating interfaces that look{" "}
-          <span className="font-medium "> clean and feel effortless </span> .
-          Always{" "}
-          <span className="font-medium ">
-            {" "}
-            learning, building, and improving{" "}
-          </span>{" "}
-          .{" "}
+          passionate about crafting beautiful, high-performance web experiences.
+          Specializing in modern frameworks like{" "}
+          <span className="font-bold tracking-wide">Next.js, React, and TypeScript</span>,
+          I build scalable applications with robust backend systems using{" "}
+          <span className="font-bold tracking-wide">MongoDB and PostgreSQL</span>.
+          Blending development and design, I create clean interfaces that look{" "}
+          <span className="font-medium">clean and feel effortless</span> to use.
+          Always learning, building, and optimizing code for speed and search engine visibility. Feel
+          free to check out my{" "}
+          <Link href="/Projects" className="underline hover:text-foreground font-semibold">
+            projects
+          </Link>{" "}
+          or{" "}
+          <Link href="/Contact" className="underline hover:text-foreground font-semibold">
+            get in touch
+          </Link>.
         </p>
       </div>
     </div>

@@ -21,9 +21,9 @@ export default function Home() {
       <OpenSourceContribution />
       <Skills />
       <div>
-        <h1 className="text-2xl font-[Instrument_Serif] tracking-wide mb-4">
+        <h2 className="text-2xl font-[Instrument_Serif] tracking-wide mb-4">
           Github Activities
-        </h1>
+        </h2>
         <GitHubCalendar
           username="himanshuvkm"
           colorScheme={resolvedTheme === "dark" ? "dark" : "light"}

@@ -18,15 +18,16 @@ export default function Footer() {
     <footer className="mt-6 pt-4 text-sm text-[var(--graytext)]">
       <hr className="pb-4" />
 
-      <h1 className="text-2xl font-[Instrument_Serif] tracking-wide text-center">
+      <h2 className="text-2xl font-[Instrument_Serif] tracking-wide text-center">
         Let&apos;s Connect
-      </h1>
+      </h2>
 
       {/* Social Links */}
       <div className="flex flex-wrap items-center justify-center gap-5 text-sm py-6">
         <Link
           href="https://github.com/himanshuvkm"
           target="_blank"
+          rel="noopener noreferrer"
           className="flex items-center gap-2 hover:text-strong transition-colors"
         >
           <Github size={16} />
@@ -36,6 +37,7 @@ export default function Footer() {
         <Link
           href="https://x.com/himanshu_9148"
           target="_blank"
+          rel="noopener noreferrer"
           className="flex items-center gap-2 hover:text-strong transition-colors"
         >
           <SiX size={14} />
@@ -45,6 +47,7 @@ export default function Footer() {
         <Link
           href="https://www.linkedin.com/in/himanshu-vishwakarma-2275a5354"
           target="_blank"
+          rel="noopener noreferrer"
           className="flex items-center gap-2 hover:text-strong transition-colors"
         >
           <Linkedin size={16} />
@@ -61,7 +64,6 @@ export default function Footer() {
 
         <a
           href="/Himanshu_Resume.pdf"
-          
           download="Himanshu_Vishwakarma_Resume.pdf"
           className="flex items-center gap-2 hover:text-strong transition-colors"
         >

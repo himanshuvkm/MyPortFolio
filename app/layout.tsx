@@ -14,7 +14,7 @@ import { Newsreader } from "next/font/google";
 
 export const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
-  weight: "400", 
+  weight: "400",
   display: "swap",
 });
 export const newsreader = Newsreader({
@@ -72,12 +72,12 @@ export const metadata: Metadata = {
   publisher: "Himanshu Vishwakarma",
 
   alternates: {
-    canonical: "https://himanshuvkm.site",
+    canonical: "https://www.himanshuvkm.in",
   },
 
   openGraph: {
     type: "website",
-    url: "https://himanshuvkm.site",
+    url: "https://www.himanshuvkm.in",
     title: "Himanshu Vishwakarma – Full Stack Web Developer",
     description:
       "Portfolio and projects of Himanshu Vishwakarma, a Full Stack Web Developer building scalable web apps using Next.js and React.",
@@ -90,7 +90,7 @@ export const metadata: Metadata = {
     description:
       "Projects, case studies, and writing on Next.js, React, and modern web development by Himanshu Vishwakarma.",
     images: ["/og-image.png"],
-    creator: "@himanshu_9148", 
+    creator: "@himanshu_9148",
   },
 
   robots: {
@@ -115,10 +115,38 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${newsreader.className}`}>
-       
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Himanshu Vishwakarma",
+              "url": "https://www.himanshuvkm.in",
+              "sameAs": [
+                "https://github.com/himanshuvkm",
+                "https://x.com/himanshu_9148",
+                "https://www.linkedin.com/in/himanshu-vishwakarma-2275a5354"
+              ],
+              "jobTitle": "Full Stack Web Developer",
+              "description": "Himanshu Vishwakarma is a Full Stack Web Developer specializing in Next.js, React, TypeScript, and modern web architectures."
+            })
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "Himanshu Vishwakarma Portfolio",
+              "url": "https://www.himanshuvkm.in"
+            })
+          }}
+        />
         <SmoothScroll />
         <ClickSpark
-          sparkColor="#808080"  
+          sparkColor="#808080"
           sparkSize={10}
           sparkRadius={15}
           sparkCount={8}
@@ -129,7 +157,7 @@ export default function RootLayout({
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange
-          >  
+          >
             <div className="flex justify-center px-5 relative z-20">
               <div className="flex flex-col my-5 w-full max-w-2xl   ">
                 <div className="flex justify-between ">
@@ -137,12 +165,12 @@ export default function RootLayout({
                 </div>
 
                 {children}
-         
+
               </div>
             </div>
           </ThemeProvider>
         </ClickSpark>
-     
+
       </body>
     </html>
   );

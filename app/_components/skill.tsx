@@ -56,9 +56,9 @@ const skills = [
 export default function Skills() {
   return (
     <section>
-      <h1 className="text-2xl font-[Instrument_Serif] tracking-wide mb-4 pb-4">
+      <h2 className="text-2xl font-[Instrument_Serif] tracking-wide mb-4 pb-4">
         Skills
-      </h1>
+      </h2>
 
       <div className="flex flex-wrap justify-center sm:justify-start gap-3 mb-4">
         {skills.map((skill) => (
