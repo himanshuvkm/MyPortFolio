@@ -1,7 +1,5 @@
 @import "tailwindcss";
-@import "@fontsource/ibm-plex-mono/400.css";
-@import "@fontsource/ibm-plex-mono/500.css";
-@import "@fontsource/ibm-plex-mono/700.css";
+
 
 
 @custom-variant dark (&:is(.dark *));
@@ -121,15 +119,8 @@
   * {
     @apply border-border outline-ring/50;
   }
-  html {
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-    -webkit-text-size-adjust: 100%;
-  }
   body {
     @apply bg-background text-foreground;
-    overflow-x: hidden;
-    min-height: 100vh;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }

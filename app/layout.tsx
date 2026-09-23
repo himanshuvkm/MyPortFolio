@@ -1,23 +1,45 @@
 import type { Metadata } from "next";
 import "./globals.css";
+
 import { ThemeProvider } from "next-themes";
 import SmoothScroll from "./_components/SmoothScroll";
 import ClickSpark from "@/components/ClickSpark";
 
-import { Instrument_Serif } from "next/font/google";
-import { Newsreader } from "next/font/google";
+import {
+  Instrument_Serif,
+  Newsreader,
+  IBM_Plex_Mono,
+} from "next/font/google";
+
+/* -------------------------------------------------------------------------- */
+/* Fonts                                                                      */
+/* -------------------------------------------------------------------------- */
 
 export const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
   weight: "400",
   display: "swap",
+  variable: "--font-instrument",
 });
+
 export const newsreader = Newsreader({
   subsets: ["latin"],
-  weight: "400", // Regular
+  weight: "400",
   style: "normal",
   display: "swap",
+  variable: "--font-newsreader",
 });
+
+export const ibmPlexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  display: "swap",
+  variable: "--font-mono",
+});
+
+/* -------------------------------------------------------------------------- */
+/* Metadata                                                                   */
+/* -------------------------------------------------------------------------- */
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.himanshuvkm.in"),
@@ -91,6 +113,7 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+
     googleBot: {
       index: true,
       follow: true,
@@ -103,43 +126,63 @@ export const metadata: Metadata = {
   category: "technology",
 };
 
+/* -------------------------------------------------------------------------- */
+/* Structured Data                                                            */
+/* -------------------------------------------------------------------------- */
+
+const jsonLdData = {
+  "@context": "https://schema.org",
+
+  "@graph": [
+    {
+      "@type": "Person",
+      name: "Himanshu Vishwakarma",
+      url: "https://www.himanshuvkm.in",
+
+      sameAs: [
+        "https://github.com/himanshuvkm",
+        "https://x.com/himanshu_9148",
+        "https://www.linkedin.com/in/himanshu-vishwakarma-2275a5354",
+      ],
+
+      jobTitle: "Full Stack Web Developer",
+
+      description:
+        "Himanshu Vishwakarma is a Full Stack Web Developer specializing in Next.js, React, TypeScript, and modern web architectures.",
+    },
+
+    {
+      "@type": "WebSite",
+      name: "Himanshu Vishwakarma Portfolio",
+      url: "https://www.himanshuvkm.in",
+    },
+  ],
+};
+
+/* -------------------------------------------------------------------------- */
+/* Root Layout                                                                */
+/* -------------------------------------------------------------------------- */
 
 export default function RootLayout({
   children,
 }: React.ComponentProps<typeof ThemeProvider>) {
   return (
     <html lang="en">
-      <body className={`${newsreader.className}`}>
+      <head>
         <script
+          id="jsonld-structured-data"
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              "name": "Himanshu Vishwakarma",
-              "url": "https://www.himanshuvkm.in",
-              "sameAs": [
-                "https://github.com/himanshuvkm",
-                "https://x.com/himanshu_9148",
-                "https://www.linkedin.com/in/himanshu-vishwakarma-2275a5354"
-              ],
-              "jobTitle": "Full Stack Web Developer",
-              "description": "Himanshu Vishwakarma is a Full Stack Web Developer specializing in Next.js, React, TypeScript, and modern web architectures."
-            })
+            __html: JSON.stringify(jsonLdData),
           }}
         />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              "name": "Himanshu Vishwakarma Portfolio",
-              "url": "https://www.himanshuvkm.in"
-            })
-          }}
-        />
+      </head>
+
+      <body
+        className={`${newsreader.className} ${ibmPlexMono.variable} ${instrumentSerif.variable}`}
+      >
         <SmoothScroll />
+
         <ClickSpark
           sparkColor="#808080"
           sparkSize={10}
@@ -153,6 +196,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+            {/* Restored from the original version to preserve layout proportions */}
             <div className="flex justify-center px-4 sm:px-6 relative z-20 min-h-screen overflow-x-hidden">
               <div className="flex flex-col my-4 sm:my-8 w-full max-w-3xl min-w-0">
                 {children}
@@ -160,7 +204,6 @@ export default function RootLayout({
             </div>
           </ThemeProvider>
         </ClickSpark>
-
       </body>
     </html>
   );

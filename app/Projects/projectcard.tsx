@@ -1,5 +1,3 @@
-"use client";
-
 import Image, { StaticImageData } from "next/image";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
@@ -15,9 +13,11 @@ export type Project = {
 export default function ProjectCard({
   project,
   titleAs: TitleTag = "h3",
+  priority = false,
 }: {
   project: Project;
   titleAs?: "h2" | "h3";
+  priority?: boolean;
 }) {
   return (
     <div
@@ -49,7 +49,8 @@ export default function ProjectCard({
           alt={project.title}
           fill
           placeholder="blur"
-          sizes="(max-width: 768px) 100vw, 50vw"
+          priority={priority}
+          sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 360px"
           className="
             object-cover rounded-lg
             transition-transform duration-300 ease-out
@@ -62,12 +63,12 @@ export default function ProjectCard({
       <div className="flex flex-col justify-between md:w-1/2 min-w-0">
         <div>
           {/* Title + Actions */}
-          <div className="flex items-center justify-between gap-2 mb-1.5">
-            <TitleTag className="text-sm sm:text-base font-semibold text-[var(--foreground)] truncate">
+          <div className="flex items-center justify-between gap-2 mb-1">
+            <TitleTag className="text-sm text-[var(--foreground)] truncate">
               {project.title}
             </TitleTag>
 
-            <div className="flex items-center gap-1.5 shrink-0">
+            <div className="flex items-center gap-2 shrink-0">
               <a
                 href={project.demo}
                 target="_blank"
@@ -75,7 +76,7 @@ export default function ProjectCard({
                 aria-label={`${project.title} live demo`}
                 className="
                   p-2 text-xs rounded-md
-                  bg-[var(--background)]
+                  bg-[var(--muted)]
                   border border-[var(--border)]
                   hover:bg-[color-mix(in oklch, var(--muted), black 8%)]
                   hover:text-foreground
@@ -92,35 +93,34 @@ export default function ProjectCard({
                 aria-label={`${project.title} source code on GitHub`}
                 className="
                   p-2 rounded-md
-                  bg-[var(--background)]
+                  bg-[var(--muted)]
                   border border-[var(--border)]
                   hover:bg-[color-mix(in oklch, var(--muted), black 8%)]
                   hover:text-foreground
                   transition
                 "
               >
-                <FaGithub size={13} />
+                <FaGithub size={14} />
               </a>
             </div>
           </div>
 
           {/* Description */}
-          <p className="text-xs sm:text-xs font-[latin] mb-2.5 text-[var(--graytext)] tracking-wide leading-relaxed">
+          <p className="text-xs font-[latin] mb-2 text-[var(--graytext)] tracking-wide">
             {project.description}
           </p>
         </div>
 
         {/* Tech stack */}
-        <div className="flex flex-wrap gap-1.5 pt-1">
+        <div className="flex flex-wrap gap-1.5">
           {project.tech.map((t) => (
             <span
               key={t}
               className="
-                px-2 py-0.5 text-[10px] sm:text-[11px]
+                px-2 py-0.5 text-[11px]
                 rounded-md
-                bg-[var(--background)]
+                bg-[var(--muted)]
                 border border-[var(--border)]
-                font-mono
               "
             >
               {t}

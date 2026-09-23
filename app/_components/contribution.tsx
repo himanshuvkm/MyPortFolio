@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Accordion,
   AccordionButton,
@@ -9,8 +11,8 @@ import { GitMerge } from "lucide-react";
 
 export default function OpenSourceContribution() {
   return (
-    <section className="space-y-3 sm:space-y-4 my-6 sm:my-10">
-      <h2 className="text-xl sm:text-2xl font-[Instrument_Serif] tracking-wide">
+    <section className="space-y-4">
+      <h2 className="text-2xl font-[Instrument_Serif]">
         Open Source Contributions
       </h2>
 
@@ -18,19 +20,19 @@ export default function OpenSourceContribution() {
         <AccordionItem>
           <AccordionButton>
             <div className="flex items-center justify-between">
-              <span className="text-base sm:text-lg text-[var(--foreground)] font-medium">
+              <span className="text-lg text-[var(--graytext)]">
                 Animate UI
               </span>
             </div>
           </AccordionButton>
 
           <AccordionPanel>
-            <div className="space-y-2 text-xs sm:text-sm text-muted-foreground pt-1">
+            <div className="space-y-2 text-sm text-muted-foreground pt-1">
               <div className="group flex items-start gap-2">
                 <GitMerge
-                  size={18}
+                  size={20}
                   className="
-                    mt-0.5
+                    mt-[2px]
                     shrink-0
                     text-purple-500
                     transition-transform duration-300
@@ -44,8 +46,8 @@ export default function OpenSourceContribution() {
                   rel="noopener noreferrer"
                   className="
                     relative
-                    text-xs sm:text-sm text-[var(--foreground)]
-                    font-semibold tracking-wide
+                    text-md text-[var(--foreground)]
+                    font-bold tracking-wide
                     transition-all duration-300
                     group-hover:underline
                     hover:animate-subtle-shake
@@ -57,7 +59,7 @@ export default function OpenSourceContribution() {
                 </a>
               </div>
 
-              <p className="pl-6 text-xs sm:text-sm text-[var(--graytext)] leading-relaxed">
+              <p className="pl-6 text-sm text-[var(--graytext)] leading-relaxed">
                 I added dropdown suggestions for request headers and fixed form null handling to improve usability and prevent runtime issues.
               </p>
             </div>
@@ -67,19 +69,19 @@ export default function OpenSourceContribution() {
         <AccordionItem>
           <AccordionButton>
             <div className="flex items-center justify-between">
-              <span className="text-base sm:text-lg text-[var(--foreground)] font-medium">
+              <span className="text-lg text-[var(--graytext)]">
                 mx-icons
               </span>
             </div>
           </AccordionButton>
 
           <AccordionPanel>
-            <div className="space-y-2 text-xs sm:text-sm text-muted-foreground pt-1">
+            <div className="space-y-2 text-sm text-muted-foreground pt-1">
               <div className="group flex items-start gap-2">
                 <GitMerge
-                  size={18}
+                  size={20}
                   className="
-                    mt-0.5
+                    mt-[2px]
                     shrink-0
                     text-purple-500
                     transition-transform duration-300
@@ -93,8 +95,8 @@ export default function OpenSourceContribution() {
                   rel="noopener noreferrer"
                   className="
                     relative
-                    text-xs sm:text-sm text-[var(--foreground)]
-                    font-semibold tracking-wide
+                    text-md text-[var(--foreground)]
+                    font-bold tracking-wide
                     transition-all duration-300
                     group-hover:underline
                     hover:animate-subtle-shake
@@ -105,7 +107,7 @@ export default function OpenSourceContribution() {
                 </a>
               </div>
 
-              <p className="pl-6 text-xs sm:text-sm text-[var(--graytext)] leading-relaxed">
+              <p className="pl-6 text-sm text-[var(--graytext)] leading-relaxed">
                 Implemented logic to synchronize the application&apos;s dark mode seamlessly with system preference changes, ensuring a consistent user experience.
               </p>
             </div>
