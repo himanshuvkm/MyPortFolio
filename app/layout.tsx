@@ -1,11 +1,6 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
-import { Doto } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
-import Header from "./_components/header";
-
-
 import SmoothScroll from "./_components/SmoothScroll";
 import ClickSpark from "@/components/ClickSpark";
 
@@ -158,14 +153,9 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <div className="flex justify-center px-5 relative z-20">
-              <div className="flex flex-col my-5 w-full max-w-3xl   ">
-                <div className="flex justify-between ">
-                  <Header />
-                </div>
-
+            <div className="flex justify-center px-4 sm:px-6 relative z-20 min-h-screen overflow-x-hidden">
+              <div className="flex flex-col my-4 sm:my-8 w-full max-w-3xl min-w-0">
                 {children}
-
               </div>
             </div>
           </ThemeProvider>

@@ -21,52 +21,60 @@ export default function Home() {
 
   const { resolvedTheme } = useTheme();
   return (
-    <motion.div layout className="flex flex-col gap-6">
+    <motion.div layout className="flex flex-col gap-6 sm:gap-8">
       <Hero />
       <OpenSourceContribution />
       <Skills />
-      <div>
-        <h2 className="text-2xl font-[Instrument_Serif] tracking-wide mb-4">
+      
+      <div className="w-full">
+        <h2 className="text-xl sm:text-2xl font-[Instrument_Serif] tracking-wide mb-3 sm:mb-4">
           Github Activities
         </h2>
-        <GitHubCalendar
-          username="himanshuvkm"
-          colorScheme={resolvedTheme === "dark" ? "dark" : "light"}
-          theme={calendarTheme}
-        />
+        <div className="w-full overflow-x-auto pb-2 rounded-xl border border-[var(--border)] bg-[var(--muted)] p-3 sm:p-4">
+          <div className="min-w-[650px] flex justify-center">
+            <GitHubCalendar
+              username="himanshuvkm"
+              colorScheme={resolvedTheme === "dark" ? "dark" : "light"}
+              theme={calendarTheme}
+              fontSize={12}
+              blockSize={11}
+              blockMargin={4}
+            />
+          </div>
+        </div>
       </div>
 
-      <div className="flex items-baseline justify-between mt-4">
-        <h2 className="text-2xl font-[Instrument_Serif] tracking-wide">
+      <div className="flex items-center justify-between mt-2 sm:mt-4">
+        <h2 className="text-xl sm:text-2xl font-[Instrument_Serif] tracking-wide">
           Projects
         </h2>
 
         <Link
           href="/Projects"
           className="
-    group inline-flex items-center gap-1
-    text-sm
-    text-muted-foreground
-    transition-colors duration-200
-    hover:text-foreground
-  "
+            group inline-flex items-center gap-1
+            text-xs sm:text-sm
+            text-muted-foreground
+            transition-colors duration-200
+            hover:text-foreground
+          "
         >
           <span
             className="
-      underline underline-offset-4
-      decoration-transparent
-      transition-colors duration-200
-      group-hover:decoration-current
-    "
+              underline underline-offset-4
+              decoration-transparent
+              transition-colors duration-200
+              group-hover:decoration-current
+            "
           >
             View all projects
           </span>
 
           <span
             className="
-      transition-transform duration-200
-      group-hover:translate-x-1
-    "
+              transition-transform duration-200
+              group-hover:translate-x-1
+            "
           >
             →
           </span>
@@ -76,7 +84,6 @@ export default function Home() {
       <ProjectCard project={featuredProject1} />
       <ProjectCard project={featuredProject2} />
 
-      {/* View all button */}
       <Footer />
     </motion.div>
   );

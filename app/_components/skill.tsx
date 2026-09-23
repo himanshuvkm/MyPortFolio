@@ -55,25 +55,25 @@ const skills = [
 
 export default function Skills() {
   return (
-    <section className="pb-10">
-      <h2 className="text-2xl font-[Instrument_Serif] tracking-wide mb-4 pb-4">
+    <section className="pb-6 sm:pb-10">
+      <h2 className="text-xl sm:text-2xl font-[Instrument_Serif] tracking-wide mb-3 pb-1">
         Skills
       </h2>
 
-      <div className="flex flex-wrap justify-center sm:justify-start gap-3 mb-4">
+      <div className="flex flex-wrap items-center justify-start gap-2 sm:gap-2.5 mb-2">
         {skills.map((skill) => (
           <Magnet
             key={skill.name}
-            padding={24}          // ↓ reduced for mobile
+            padding={16}
             magnetStrength={10}
           >
             <span
               className="
-                flex items-center gap-2
+                inline-flex items-center gap-1.5 sm:gap-2
                 rounded-lg
                 border border-[var(--border)]
                 bg-[var(--muted)]
-                px-3 py-2
+                px-2.5 py-1.5 sm:px-3 sm:py-2
                 text-xs font-medium
                 cursor-pointer
                 transition-all
@@ -82,7 +82,7 @@ export default function Skills() {
               "
             >
               {skill.icon}
-              {skill.name}
+              <span>{skill.name}</span>
             </span>
           </Magnet>
         ))}

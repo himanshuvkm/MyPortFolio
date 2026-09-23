@@ -8,7 +8,7 @@ declare module 'github-contribution-calendar' {
     showLabels?: boolean;
     fontSize?: number;
     theme?: string;
-    [key: string]: any;
+    [key: string]: unknown;
   }
 
   export const GitHubCalendar: ComponentType<GitHubCalendarProps>;

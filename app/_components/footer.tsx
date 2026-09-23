@@ -15,22 +15,22 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="mt-6 pt-4 text-sm text-[var(--graytext)]">
-      <hr className="pb-4" />
+    <footer className="mt-8 pt-4 text-xs sm:text-sm text-[var(--graytext)]">
+      <hr className="pb-4 border-[var(--border)]" />
 
-      <h2 className="text-2xl font-[Instrument_Serif] tracking-wide text-center">
+      <h2 className="text-xl sm:text-2xl font-[Instrument_Serif] tracking-wide text-center">
         Let&apos;s Connect
       </h2>
 
       {/* Social Links */}
-      <div className="flex flex-wrap items-center justify-center gap-5 text-sm py-6">
+      <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 py-4 sm:py-6">
         <Link
           href="https://github.com/himanshuvkm"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 hover:text-strong transition-colors"
+          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[var(--border)] bg-[var(--muted)] hover:text-foreground hover:bg-[color-mix(in oklch,var(--muted),black 8%)] transition-colors text-xs sm:text-sm"
         >
-          <Github size={16} />
+          <Github size={15} />
           <span>GitHub</span>
         </Link>
 
@@ -38,9 +38,9 @@ export default function Footer() {
           href="https://x.com/himanshu_9148"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 hover:text-strong transition-colors"
+          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[var(--border)] bg-[var(--muted)] hover:text-foreground hover:bg-[color-mix(in oklch,var(--muted),black 8%)] transition-colors text-xs sm:text-sm"
         >
-          <SiX size={14} />
+          <SiX size={13} />
           <span>Twitter</span>
         </Link>
 
@@ -48,44 +48,38 @@ export default function Footer() {
           href="https://www.linkedin.com/in/himanshu-vishwakarma-2275a5354"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 hover:text-strong transition-colors"
+          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[var(--border)] bg-[var(--muted)] hover:text-foreground hover:bg-[color-mix(in oklch,var(--muted),black 8%)] transition-colors text-xs sm:text-sm"
         >
-          <Linkedin size={16} />
+          <Linkedin size={15} />
           <span>LinkedIn</span>
         </Link>
 
         <Link
           href="mailto:himanshuvkm252@gmail.com"
-          className="flex items-center gap-2 hover:text-strong transition-colors"
+          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[var(--border)] bg-[var(--muted)] hover:text-foreground hover:bg-[color-mix(in oklch,var(--muted),black 8%)] transition-colors text-xs sm:text-sm"
         >
-          <Mail size={16} />
+          <Mail size={15} />
           <span>Mail</span>
         </Link>
 
         <a
           href="/Himanshu_Resume.pdf"
           download="Himanshu_Vishwakarma_Resume.pdf"
-          className="flex items-center gap-2 hover:text-strong transition-colors"
+          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[var(--border)] bg-[var(--muted)] hover:text-foreground hover:bg-[color-mix(in oklch,var(--muted),black 8%)] transition-colors text-xs sm:text-sm"
         >
-          <Paperclip size={16} />
+          <Paperclip size={15} />
           <span>Resume</span>
         </a>
       </div>
 
-      <hr className="pb-4" />
+      <hr className="pb-4 border-[var(--border)]" />
 
       {/* Meta */}
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="w-full">
         {/* Top meta */}
-        <div
-          className="
-      flex items-start justify-between
-      gap-4
-      text-xs sm:text-sm
-    "
-        >
+        <div className="flex items-center justify-between gap-4 text-xs sm:text-sm">
           {/* Left */}
-          <div className="space-y-1 text-left">
+          <div className="space-y-0.5 text-left">
             <p>
               crafted by{" "}
               <span className="font-medium text-[var(--foreground)]">
@@ -100,14 +94,14 @@ export default function Footer() {
           </div>
 
           {/* Right */}
-          <div className="space-y-1 text-right">
+          <div className="space-y-0.5 text-right">
             <div>
               Visits{" "}
               <span className="font-medium text-[var(--foreground)]">
                 <VisitorCounter />
               </span>
             </div>
-            <p>
+            <p className="text-muted-foreground font-mono text-[11px] sm:text-xs">
               <span className="hidden sm:inline">
                 {format(currentTime, "hh:mm:ss a")}
               </span>
@@ -119,7 +113,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="mt-6 text-center text-xs ">
+        <div className="mt-4 sm:mt-6 text-center text-[11px] sm:text-xs text-muted-foreground">
           © 2026 Himanshu Vishwakarma.
         </div>
       </div>

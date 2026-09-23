@@ -7,6 +7,7 @@ import { SiX } from "react-icons/si";
 import { IoLogoGithub } from "react-icons/io5";
 import Link from "next/link";
 import { FaLinkedin } from "react-icons/fa";
+import ModeToggle from "./mode";
 
 const BASE_SIZE = 96;
 const SCALE = 1.7;
@@ -53,63 +54,70 @@ function MailIcon() {
 
 export default function Hero() {
   return (
-    <div className="flex flex-col gap-8 mt-12">
-      {/* Avatar */}
-      <motion.div
-        initial="rest"
-        animate="rest"
-        whileHover="hover"
-        variants={{
-          rest: { height: BASE_SIZE },
-          hover: { height: BASE_SIZE * 1.6 },
-        }}
-        transition={{
-          type: "spring",
-          stiffness: 300,
-          damping: 25,
-          mass: 0.8,
-        }}
-        style={{ width: BASE_SIZE }}
-        className="relative overflow-visible mx-auto sm:mx-0"
-      >
+    <div className="flex flex-col gap-8 mt-2 sm:mt-4">
+      {/* Avatar & Theme Toggle */}
+      <div className="flex items-start justify-between">
         <motion.div
+          initial="rest"
+          animate="rest"
+          whileHover="hover"
           variants={{
-            rest: { scale: 1.2, filter: "grayscale(100%)" },
-            hover: { scale: SCALE, filter: "grayscale(0%)" },
+            rest: { height: BASE_SIZE },
+            hover: { height: BASE_SIZE * 1.6 },
           }}
-          transition={{ visualDuration: 0.5, bounce: 0 }}
-          style={{
-            transformOrigin: "top left",
-            width: BASE_SIZE,
-            height: BASE_SIZE,
+          transition={{
+            type: "spring",
+            stiffness: 300,
+            damping: 25,
+            mass: 0.8,
           }}
-          className="absolute top-0 left-0"
+          style={{ width: BASE_SIZE }}
+          className="relative overflow-visible"
         >
-          <Image
-            src={logo}
-            alt="Avatar"
-            className="w-24 h-24 rounded-full object-cover"
-          />
+          <motion.div
+            variants={{
+              rest: { scale: 1.2, filter: "grayscale(100%)" },
+              hover: { scale: SCALE, filter: "grayscale(0%)" },
+            }}
+            transition={{ visualDuration: 0.5, bounce: 0 }}
+            style={{
+              transformOrigin: "top left",
+              width: BASE_SIZE,
+              height: BASE_SIZE,
+            }}
+            className="absolute top-0 left-0"
+          >
+            <Image
+              src={logo}
+              alt="Avatar"
+              className="w-24 h-24 rounded-full object-cover"
+            />
+          </motion.div>
         </motion.div>
-      </motion.div>
+
+        {/* Theme Toggle with slight top padding */}
+        <div className="pt-2 sm:pt-3">
+          <ModeToggle />
+        </div>
+      </div>
 
       {/* Text Section */}
       <div className="space-y-2">
         {/* Name + Icons */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-          <h1 className="text-4xl font-[Instrument_Serif] text-center sm:text-left">
+          <h1 className="text-3xl sm:text-4xl font-[Instrument_Serif] text-left">
             Himanshu Vishwakarma
           </h1>
 
-          <div className="flex items-center justify-center sm:justify-end gap-4">
-            <Link href="https://github.com/himanshuvkm" target="_blank">
+          <div className="flex items-center justify-start sm:justify-end gap-3.5 sm:gap-4">
+            <Link href="https://github.com/himanshuvkm" target="_blank" aria-label="GitHub Profile">
               <IoLogoGithub
                 size={20}
                 className="text-[#333] dark:text-white hover:scale-110 transition"
               />
             </Link>
 
-            <Link href="https://x.com/himanshu_9148" target="_blank">
+            <Link href="https://x.com/himanshu_9148" target="_blank" aria-label="Twitter Profile">
               <SiX
                 size={16}
                 className="text-black dark:text-white hover:scale-110 transition"
@@ -119,6 +127,7 @@ export default function Hero() {
             <Link
               href="https://www.linkedin.com/in/himanshu-vishwakarma-2275a5354"
               target="_blank"
+              aria-label="LinkedIn Profile"
             >
               <FaLinkedin
                 size={20}
@@ -126,17 +135,17 @@ export default function Hero() {
               />
             </Link>
 
-            <Link href="mailto:himanshuvkm252@gmail.com">
+            <Link href="mailto:himanshuvkm252@gmail.com" aria-label="Send Email">
               <MailIcon />
             </Link>
           </div>
         </div>
 
-        <p className="text-gray-600 text-center sm:text-left">
+        <p className="text-sm sm:text-base text-muted-foreground text-left">
           Full Stack Web Developer
         </p>
 
-        <p className="text-md text-[var(--graytext)] leading-relaxed">
+        <p className="text-sm sm:text-base text-[var(--graytext)] leading-relaxed">
           I am a{" "}
           <span className="font-bold tracking-wide">
             Full Stack Web Developer

@@ -1,7 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import { Eye } from "lucide-react"
+import { useEffect, useState } from "react";
 
 export function VisitorCounter() {
   const [count, setCount] = useState<number | null>(null)

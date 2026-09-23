@@ -27,45 +27,58 @@ const upcomingPosts = [
   }
 ];
 
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
+
 export default function BlogPage() {
   return (
-    <section className="py-10 mt-5">
+    <section className="py-4 sm:py-8 tracking-tight leading-relaxed">
+      <div className="mb-6 flex items-center justify-between">
+        <Link
+          href="/"
+          className="inline-flex items-center gap-1.5 text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors group"
+        >
+          <ArrowLeft size={14} className="transition-transform group-hover:-translate-x-1" />
+          <span>Home</span>
+        </Link>
+      </div>
+
       {/* Heading */}
-      <div className="text-center mb-10">
-        <h1 className="text-3xl font-[Instrument_Serif] tracking-wide text-foreground mb-3">
+      <div className="text-center mb-8 sm:mb-10">
+        <h1 className="text-3xl sm:text-4xl font-[Instrument_Serif] tracking-wide text-foreground mb-2 sm:mb-3">
           Developer Blog
         </h1>
-        <p className="text-muted-foreground max-w-md mx-auto text-sm leading-relaxed">
+        <p className="text-muted-foreground max-w-md mx-auto text-xs sm:text-sm leading-relaxed">
           Thoughtful articles about frontend architecture, database optimization, and full-stack engineering.
         </p>
       </div>
 
       {/* Upcoming Posts Section */}
-      <div className="space-y-6 max-w-xl mx-auto mb-16">
-        <h2 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground border-b border-border pb-2 mb-4">
+      <div className="space-y-4 sm:space-y-6 max-w-xl mx-auto mb-12 sm:mb-16">
+        <h2 className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-muted-foreground border-b border-border pb-2 mb-4">
           Upcoming Articles
         </h2>
         {upcomingPosts.map((post, idx) => (
           <article 
             key={idx}
-            className="p-5 rounded-xl border border-border bg-muted/50 flex flex-col gap-2 hover:border-foreground/20 transition-all duration-300"
+            className="p-4 sm:p-5 rounded-xl border border-border bg-[var(--muted)] flex flex-col gap-2 hover:border-foreground/20 transition-all duration-300"
           >
-            <div className="flex items-center justify-between gap-2">
+            <div className="flex flex-wrap items-center justify-between gap-2">
               <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-full bg-border text-muted-foreground">
                 {post.status}
               </span>
-              <div className="flex gap-1.5">
+              <div className="flex flex-wrap gap-1.5">
                 {post.tags.map(tag => (
-                  <span key={tag} className="text-[10px] font-medium text-muted-foreground">
+                  <span key={tag} className="text-[10px] sm:text-[11px] font-medium text-muted-foreground font-mono">
                     #{tag}
                   </span>
                 ))}
               </div>
             </div>
-            <h3 className="text-md font-semibold text-foreground tracking-tight mt-1">
+            <h3 className="text-sm sm:text-base font-semibold text-foreground tracking-tight mt-1">
               {post.title}
             </h3>
-            <p className="text-xs text-muted-foreground leading-relaxed">
+            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
               {post.excerpt}
             </p>
           </article>

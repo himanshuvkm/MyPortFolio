@@ -5,29 +5,9 @@ import chatimg from "@/public/retrochat.jpg";
 import housetrialimg from "@/public/got.png";
 import repolensimg from "@/public/repolens.png";
 import snapurlimg from "@/public/snapurl.png";
+import braidimg from "@/public/braid.png";
 
 export const projects = [
-  {
-    emoji: "💸",
-    title: "FinTrack (AI Personal Finance App)",
-    link: "https://github.com/himanshuvkm/FinTrack",
-    demo: "https://finnntrack.vercel.app",
-    image: fintrackimg,
-    category: "Full Stack | Personal",
-    description:
-      "An AI-powered personal finance tool for tracking expenses, budgets, automations, monthly insights, and dashboards with charts. Integrated with Clerk, Supabase, Prisma, Gemini AI, and Inngest.",
-    tech: [
-      "Next.js",
-      "React",
-      "Supabase",
-      "Prisma",
-      "Tailwind",
-      "shadcn/ui",
-      "Clerk",
-      "Gemini AI",
-      "Inngest",
-    ],
-  },
   {
     emoji: "🔗",
     title: "SnapURL (URL Shortener with Analytics)",
@@ -49,6 +29,47 @@ export const projects = [
       "GitHub Actions",
     ],
   },
+    {
+    emoji: "🧬",
+    title: "Braid (Real-Time Collaborative Editor)",
+    link: "https://github.com/himanshuvkm/braid",
+    demo: "https://braidd.vercel.app",
+    image: braidimg,
+    category: "Full Stack | Distributed Systems",
+    description:
+      "A real-time collaborative document and code editor powered by a custom CRDT engine. Supports conflict-free concurrent editing with Lamport-clock-based causality, real-time synchronization, presence, and persistent document state.",
+    tech: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "CRDT",
+      "WebSockets",
+      "Distributed Systems",
+    ],
+  },
+  {
+    emoji: "💸",
+    title: "FinTrack (AI Personal Finance App)",
+    link: "https://github.com/himanshuvkm/FinTrack",
+    demo: "https://finnntrack.vercel.app",
+    image: fintrackimg,
+    category: "Full Stack | Personal",
+    description:
+      "An AI-powered personal finance tool for tracking expenses, budgets, automations, monthly insights, and dashboards with charts. Integrated with Clerk, Supabase, Prisma, Gemini AI, and Inngest.",
+    tech: [
+      "Next.js",
+      "React",
+      "Supabase",
+      "Prisma",
+      "Tailwind",
+      "shadcn/ui",
+      "Clerk",
+      "Gemini AI",
+      "Inngest",
+    ],
+  },
+  
   {
     emoji: "🚀",
     title: "INcBlog (Tech Blogging Platform)",
