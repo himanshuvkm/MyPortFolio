@@ -11,7 +11,7 @@ export const projects = [
   {
     emoji: "🔗",
     title: "SnapURL (URL Shortener with Analytics)",
-    link: "https://github.com/himanshuvkm/snapurl",
+    link: "https://snapurll.vercel.app",
     demo: "https://github.com/himanshuvkm/snapurl",
     image: snapurlimg,
     category: "Full Stack | Backend-Heavy",

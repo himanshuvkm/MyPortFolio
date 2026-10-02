@@ -97,7 +97,7 @@ export default function Footer() {
         </Link>
 
         <a
-          href="/Himanshu_Resume.pdf"
+          href="/Himanshu_Vishwakarma_Resume.pdf"
           download="Himanshu_Vishwakarma_Resume.pdf"
           className="flex items-center gap-2 hover:text-strong transition-colors"
         >
